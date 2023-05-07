@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="modele-logo-fleur-verte_2242-8.png" />
+    <None Remove="pngtree-red-rose-flower-logo-for-business-png-image_3293979.jpg" />
+    <None Remove="violet.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="modele-logo-fleur-verte_2242-8.png" />
+    <DesignDataWithDesignTimeCreatableTypes Include="pngtree-red-rose-flower-logo-for-business-png-image_3293979.jpg" />
+    <Resource Include="violet.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.33" />
+  </ItemGroup>
+
+</Project>

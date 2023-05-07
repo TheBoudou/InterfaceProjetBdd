@@ -1,0 +1,37 @@
+﻿<Window x:Class="InterfaceProjetBdd.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterfaceProjetBdd"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock x:Name="Titre_fenêtre" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Menu de connection Fleuriste" VerticalAlignment="Top" FontFamily="Arial" FontSize="36"/>
+        <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="497,136,0,0" VerticalAlignment="Top" Width="217" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.157"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button x:Name="Connexion" Content="Connection" HorizontalAlignment="Left" Margin="82,348,0,0" VerticalAlignment="Top" Height="22" Width="190" RenderTransformOrigin="0.5,0.5" Click="Button_Click" Command="{Binding ElementName=passwordBox, Mode=OneWay}">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-179.763"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <PasswordBox x:Name="mdp" HorizontalAlignment="Left" Margin="82,279,0,0" VerticalAlignment="Top" Width="328"/>
+        <TextBox HorizontalAlignment="Left" Margin="82,217,0,0" TextWrapping="Wrap" Name="ID" VerticalAlignment="Top" Width="328" TextChanged="TextBox_TextChanged"/>
+        <Label x:Name="LabelMDP" Content="Mot de passe" HorizontalAlignment="Left" Margin="82,253,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LabelID" Content="Identifiant" HorizontalAlignment="Left" Margin="82,191,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="82,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354"><Run Text="Bienvenue dans la version 1.0 de notre menu Fleuriste !"/><LineBreak/><Run Language="fr-fr" Text="Il ne vous reste plus qu'a remplir les cases ci-dessous et à cliquer sur connection!"/></TextBlock>
+    </Grid>
+</Window>
