@@ -1,0 +1,22 @@
+﻿<Window x:Class="InterfaceProjetBdd.AjoutObjet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterfaceProjetBdd"
+        mc:Ignorable="d"
+        Title="AjoutObjet" Height="450" Width="200">
+    <Grid>
+        <Button Name="Add" Content="Ajout" HorizontalAlignment="Center" Margin="0,327,0,0" VerticalAlignment="Top" Width="124" Click="Add_Click"/>
+        <ComboBox x:Name="Table" HorizontalAlignment="Center" Margin="0,78,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Table_SelectionChanged">
+            <ComboBoxItem IsSelected="True">fleur</ComboBoxItem>
+            <ComboBoxItem>accessoire</ComboBoxItem>
+        </ComboBox>
+        <TextBox Name="ID" HorizontalAlignment="Center" Margin="0,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="Prix" HorizontalAlignment="Center" Margin="0,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,62,0,0" TextWrapping="Wrap" Text="Type" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,114,0,0" TextWrapping="Wrap" Text="Nom Objet" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="40,166,0,0" TextWrapping="Wrap" Text="Prix Objet" VerticalAlignment="Top"/>
+        <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Center" Margin="0,352,0,0" VerticalAlignment="Top" Width="124" Height="26" Click="Retour_Click"/>
+    </Grid>
+</Window>

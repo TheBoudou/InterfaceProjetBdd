@@ -183,5 +183,10 @@ namespace InterfaceProjetBdd
             ajout.Show();
             this.Close();
         }
+
+        private void BoutonSuppr_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

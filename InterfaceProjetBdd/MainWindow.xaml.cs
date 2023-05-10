@@ -39,19 +39,56 @@ namespace InterfaceProjetBdd
             user = ID.Text;
             password = mdp.Password;
             string databasesql = "fleurs";
-            string connectionstring = "SERVER=localhost;PORT=3306;DATABASE=" + databasesql + ";UID=" + user + ";PASSWORD=" + password + ";";
+            string connectionstring = "";
+            if (user == "root")
+            {
+                connectionstring = "SERVER=localhost;PORT=3306;DATABASE=" + databasesql + ";UID=" + user + ";PASSWORD=" + password + ";";
+            }
+            else
+            {
+                connectionstring = "SERVER=localhost;PORT=3306;DATABASE=" + databasesql + ";UID=bozo;PASSWORD=bozo;";
+            }
             MySqlConnection Connexion = new MySqlConnection(connectionstring);
             try
             {
                 Connexion.Open();
                 if (Connexion.State == ConnectionState.Open)
                 {
-                    // Connection successful
-                    MessageBox.Show("Connection réussie avec l'utilisateur : " + ID.Text, "Connection Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                    var Menu = new MenuPrincipal(connectionstring);
-                    Menu.Show();
-                    Connexion.Close();
-                    this.Close();
+                    if (user == "root")
+                    {
+                        // Connection successful
+                        MessageBox.Show("Connection réussie avec l'utilisateur : " + ID.Text, "Connection Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        var Menu = new MenuPrincipal(connectionstring);
+                        Menu.Show();
+                        Connexion.Close();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MySqlCommand command = Connexion.CreateCommand();
+                        command.CommandText = "select id_client from clients where mdp_client = '" + password + "';";
+                        MySqlDataReader reader;
+                        reader = command.ExecuteReader();
+                        string id = "";
+                        while (reader.Read())                           // parcours ligne par ligne
+                        {
+                            id = reader.GetValue(0).ToString();  // recuperation de la valeur de chaque cellule sous forme d'une string (voir cependant les differentes methodes disponibles !!)
+                        }
+                        reader.Close();
+                        if (id != null)
+                        {
+                            MessageBox.Show("Connection réussie avec l'utilisateur : " + ID.Text, "Connection Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                            var Menu = new MenuPourClient(connectionstring,user);
+                            Menu.Show();
+                            Connexion.Close();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Une erreur est survenue : Mauvais Login ou Mot de passe, réssayez.", "Erreur Critique Client", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    
                 }
             }
 

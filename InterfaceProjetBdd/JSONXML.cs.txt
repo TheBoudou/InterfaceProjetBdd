@@ -1,0 +1,304 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+
+using System.Xml.Serialization;
+using System.Xml;
+
+using MySql.Data.MySqlClient;
+
+namespace JsonProjet
+{
+
+
+    public class Client
+    {
+        private string id_client;
+        private string nom_client;
+        private string prenom_client;
+        private string num_tel_client;
+        private string email_client;
+        private string mdp_client;
+        private string adresse_facturation_client;
+        private string carte_credit_client;
+        private int nb_commandes;
+        private int nb_commandes_mois;
+        private string statut;
+
+
+        public Client(string id_client, string nom_client, string prenom_client, string num_tel_client, string email_client, string mdp_client, string adresse_facturation_client, string carte_credit_client, int nb_commandes, int nb_commandes_mois, string statut)
+        {
+            this.id_client=id_client;
+            this.nom_client=nom_client;
+            this.prenom_client=prenom_client;
+            this.num_tel_client=num_tel_client;
+            this.email_client=email_client;
+            this.mdp_client=mdp_client;
+            this.adresse_facturation_client=adresse_facturation_client;
+            this.carte_credit_client=carte_credit_client;
+            this.nb_commandes=nb_commandes;
+            this.nb_commandes_mois=nb_commandes_mois;
+            this.statut=statut;
+    }
+
+        public string IdClient
+        {
+            get { return id_client; }
+            set { id_client = value; }
+        }
+
+        public string NomClient
+        {
+            get { return nom_client; }
+            set { nom_client = value; }
+        }
+
+        public string PrenomClient
+        {
+            get { return prenom_client; }
+            set { prenom_client = value; }
+        }
+
+        public string NumTelClient
+        {
+            get { return num_tel_client; }
+            set { num_tel_client = value; }
+        }
+
+        public string EmailClient
+        {
+            get { return email_client; }
+            set { email_client = value; }
+        }
+
+        public string MdpClient
+        {
+            get { return mdp_client; }
+            set { mdp_client = value; }
+        }
+
+        public string AdresseFacturationClient
+        {
+            get { return adresse_facturation_client; }
+            set { adresse_facturation_client = value; }
+        }
+
+        public string CarteCreditClient
+        {
+            get { return carte_credit_client; }
+            set { carte_credit_client = value; }
+        }
+
+        public int NbCommandes
+        {
+            get { return nb_commandes; }
+            set { nb_commandes = value; }
+        }
+
+        public int NbCommandesMois
+        {
+            get { return nb_commandes_mois; }
+            set { nb_commandes_mois = value; }
+        }
+
+        public string Statut
+        {
+            get { return statut; }
+            set { statut = value; }
+        }
+
+        override public string ToString()
+          => "à écrire";
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+    
+            string connectionString = "SERVER=localhost;PORT=3306;DATABASE=loueur;UID=root;PASSWORD=root;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            SerialiserObjectToFileJson(connection);
+            Console.WriteLine("------------------\nfin de <SerialiserObjectToFileJson>\n------------------\nappuyez sur une touche");
+            Console.ReadKey();
+            Console.Clear();
+
+            SerialiserXml(connection);
+            Console.WriteLine("------------------\nfin de <SerialiserXml>\n------------------\nappuyez sur une touche");
+            Console.ReadKey();
+            Console.Clear();
+
+
+        }
+
+        static void AfficherPrettyJson(string nomFichier)
+        {
+            StreamReader reader = new StreamReader(nomFichier);
+            JsonTextReader jreader = new JsonTextReader(reader);
+            while (jreader.Read())
+            {
+                if (jreader.Value != null)
+                {
+                    if (jreader.TokenType.ToString() == "PropertyName")
+                    {
+                        Console.Write(jreader.Value + " : ");
+                    }
+                    else
+                    {
+                        Console.WriteLine(jreader.Value);
+                    }
+                }
+                else
+                {
+                    // Console.WriteLine("Token:{0} ", jreader.TokenType.ToString());
+                    if (jreader.TokenType.ToString() == "StartObject") Console.WriteLine("Nouvel objet\n--------------");
+                    if (jreader.TokenType.ToString() == "EndObject") Console.WriteLine("-------------\n");
+                    if (jreader.TokenType.ToString() == "StartArray") Console.WriteLine("Liste\n");
+                }
+            }
+            jreader.Close();
+            reader.Close();
+        }
+
+
+        
+        static void SerialiserObjectToFileJson(MySqlConnection connection)
+        {
+            // création de la liste d'objets mesChats
+            List<Client> clientsNonCommandes = new List<Client>();
+
+            connection.Open();
+
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = " SELECT *" 
+                                   + " FROM clients"
+                                   + " WHERE id_client NOT IN("
+                                   + " SELECT id_client"
+                                   + " FROM commande"
+                                   + " WHERE date_commande > DATE_SUB(NOW(), INTERVAL 6 MONTH));";
+
+
+            MySqlDataReader reader;
+            reader = command.ExecuteReader();
+
+            string id_client;
+            string nom_client;
+            string prenom_client;
+            string num_tel_client;
+            string email_client;
+            string mdp_client;
+            string adresse_facturation_client;
+            string carte_credit_client;
+            int nb_commandes;
+            int nb_commandes_mois;
+            string statut;
+
+            while (reader.Read())   // parcours ligne par ligne
+            {
+
+                id_client = reader.GetString(0);
+                nom_client = reader.GetString(1);
+                prenom_client = reader.GetString(2);
+                num_tel_client = reader.GetString(3);
+                email_client = reader.GetString(4);
+                mdp_client = reader.GetString(5);
+                adresse_facturation_client = reader.GetString(6);
+                carte_credit_client = reader.GetString(7);
+                nb_commandes = reader.GetInt32(8);
+                nb_commandes_mois = reader.GetInt32(9);
+                statut = reader.GetString(10);
+
+                Console.WriteLine(id_client + " : " + nom_client + ", " + prenom_client + ", " + num_tel_client + ", " + email_client + ", " + mdp_client + ", " + adresse_facturation_client + ", " + carte_credit_client + ", " + nb_commandes + ", " + nb_commandes_mois + ", " + statut);
+
+                clientsNonCommandes.Add(new Client(id_client, nom_client, prenom_client, num_tel_client, email_client, mdp_client, adresse_facturation_client, carte_credit_client, nb_commandes, nb_commandes_mois, statut));
+            }
+
+            connection.Close();
+
+            // instanciation des outils
+            StreamWriter sw = new StreamWriter("clientsNonCommandes.json");
+            JsonTextWriter writer = new JsonTextWriter(sw);
+
+            // sérialisation
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Serialize(writer, clientsNonCommandes);
+
+            // fermeture des writers
+            writer.Close();
+            sw.Close();
+
+        }
+
+
+
+        static void SerialiserXml(MySqlConnection connection)
+        {
+            List<Client> clientsCommandes = new List<Client>();
+
+          
+                connection.Open();
+
+                MySqlCommand command = connection.CreateCommand();
+                command.CommandText = " SELECT *"
+                                    + " FROM clients"
+                                    + " WHERE nb_commandes_mois>1 ;";
+
+
+                MySqlDataReader reader;
+                reader = command.ExecuteReader();
+
+                string id_client;
+                string nom_client;
+                string prenom_client;
+                string num_tel_client;
+                string email_client;
+                string mdp_client;
+                string adresse_facturation_client;
+                string carte_credit_client;
+                int nb_commandes;
+                int nb_commandes_mois;
+                string statut;
+
+                while (reader.Read())   // parcours ligne par ligne
+                {
+
+                id_client = reader.GetString(0);
+                nom_client = reader.GetString(1);
+                prenom_client = reader.GetString(2);
+                num_tel_client = reader.GetString(3);
+                email_client = reader.GetString(4);
+                mdp_client = reader.GetString(5);
+                adresse_facturation_client = reader.GetString(6);
+                carte_credit_client = reader.GetString(7);
+                nb_commandes = reader.GetInt32(8);
+                nb_commandes_mois = reader.GetInt32(9);
+                statut = reader.GetString(10);
+
+                Console.WriteLine(id_client + " : " + nom_client + ", " + prenom_client + ", " + num_tel_client + ", " + email_client + ", " + mdp_client + ", " + adresse_facturation_client + ", " + carte_credit_client + ", " + nb_commandes + ", " + nb_commandes_mois + ", " + statut);
+
+                clientsCommandes.Add(new Client(id_client, nom_client, prenom_client, num_tel_client, email_client, mdp_client, adresse_facturation_client, carte_credit_client, nb_commandes, nb_commandes_mois, statut));
+            }
+
+            connection.Close();
+            
+
+
+
+            // Code pour sérialiser l'objet en XML dans un fichier ".xml"
+            XmlSerializer xs = new XmlSerializer(typeof(Client));  // l'outil de sérialisation
+            StreamWriter wr = new StreamWriter("clientsCommandes.xml");  // accès en écriture à un fichier (texte)
+            xs.Serialize(wr, clientsCommandes); // action de sérialiser en XML l'objet  
+                                    // et d'écrire le résultat dans le fichier manipulé par wr
+            wr.Close();
+            Console.WriteLine("sérialisation dans fichier clientsCommandes.xml terminée");
+
+            // vérifier le contenu du fichier ".xml" dans le dossier bin\Debug de Visual Studio.
+        }
+
+
+    }
+}
