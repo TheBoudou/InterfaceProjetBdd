@@ -74,5 +74,6 @@
         <TextBox Name="EntreeWhere" Grid.Column="1" HorizontalAlignment="Left" Margin="150,184,0,0" TextWrapping="Wrap" Text="Insérer Recherche" VerticalAlignment="Top" Width="148" TextChanged="EntreeWhere_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="201,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2"><Run Language="fr-fr" Text="Eléments de comparaisons"/></TextBlock>
         <Button x:Name="BoutonAddClient" Content="Ajout Client" HorizontalAlignment="Left" Margin="42,238,0,0" VerticalAlignment="Top" Height="33" Width="110" FontFamily="Arial" Click="BoutonAjout_Click"/>
+        <Button x:Name="BoutonSuppClient" Content="Suppression Client" HorizontalAlignment="Left" Margin="0,238,0,0" VerticalAlignment="Top" Height="33" Width="110" FontFamily="Arial" Click="BoutonSuppr_Click" Grid.Column="1"/>
     </Grid>
 </Window>

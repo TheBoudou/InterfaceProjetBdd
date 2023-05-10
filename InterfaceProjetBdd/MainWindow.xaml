@@ -32,6 +32,6 @@
         <TextBox HorizontalAlignment="Left" Margin="82,217,0,0" TextWrapping="Wrap" Name="ID" VerticalAlignment="Top" Width="328" TextChanged="TextBox_TextChanged"/>
         <Label x:Name="LabelMDP" Content="Mot de passe" HorizontalAlignment="Left" Margin="82,253,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LabelID" Content="Identifiant" HorizontalAlignment="Left" Margin="82,191,0,0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="82,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354"><Run Text="Bienvenue dans la version 1.0 de notre menu Fleuriste !"/><LineBreak/><Run Language="fr-fr" Text="Il ne vous reste plus qu'a remplir les cases ci-dessous et à cliquer sur connection!"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="82,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354"><Run Text="Bienvenue dans la version 1.0 de notre menu Fleuriste !"/><LineBreak/><Run Text="Il ne vous reste plus qu'a remplir les cases ci-dessous et à cliquer sur connection!"/><Run Language="fr-fr" Text=" Si vous êtes un client veuillez utiliser votre ID."/></TextBlock>
     </Grid>
 </Window>

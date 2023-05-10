@@ -5,19 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InterfaceProjetBdd"
         mc:Ignorable="d"
-        Title="Ajout_Client" Height="450" Width="250">
+        Title="Ajout_Client" Height="450" Width="300">
     <Grid>
-        <Button Name="Add" Content="Ajouter" HorizontalAlignment="Left" Margin="144,390,0,0" VerticalAlignment="Top" Width="91"/>
-        <Button Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top" Width="91" Click="Retour_Click"/>
-        <TextBox Name="id_client" HorizontalAlignment="Left" Margin="56,40,0,0" TextWrapping="Wrap" Text="Insert Here" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="nom_client" HorizontalAlignment="Left" Margin="56,80,0,0" TextWrapping="Wrap" Text="Insert Here" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="prenom_client" HorizontalAlignment="Left" Margin="56,120,0,0" TextWrapping="Wrap" Text="Insert Here" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="num_tel_client" HorizontalAlignment="Left" Margin="56,160,0,0" TextWrapping="Wrap" Text="Insert Here" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="email_client" HorizontalAlignment="Left" Margin="56,200,0,0" TextWrapping="Wrap" Text="Insert Here" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="mdp_client" HorizontalAlignment="Left" Margin="56,240,0,0" TextWrapping="Wrap" Text="Insert Here" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="adresse_facturation_client" HorizontalAlignment="Left" Margin="56,280,0,0" TextWrapping="Wrap" Text="Insert Here" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="carte_credit_client" HorizontalAlignment="Left" Margin="56,320,0,0" TextWrapping="Wrap" Text="Insert Here" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="56,20,0,0" TextWrapping="Wrap" Text="id_client" VerticalAlignment="Top"/>
+        <Button Name="Add" Content="Ajouter" HorizontalAlignment="Left" Margin="180,390,0,0" VerticalAlignment="Top" Width="91" Click="Add_Click"/>
+        <Button Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="40,390,0,0" VerticalAlignment="Top" Width="91" Click="Retour_Click"/>
+        <TextBox Name="nom_client" HorizontalAlignment="Left" Margin="56,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" TextChanged="nom_client_TextChanged"/>
+        <TextBox Name="prenom_client" HorizontalAlignment="Left" Margin="56,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" TextChanged="prenom_client_TextChanged"/>
+        <TextBox Name="num_tel_client" HorizontalAlignment="Left" Margin="56,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" TextChanged="num_tel_client_TextChanged"/>
+        <TextBox Name="email_client" HorizontalAlignment="Left" Margin="56,200,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" TextChanged="email_client_TextChanged"/>
+        <TextBox Name="mdp_client" HorizontalAlignment="Left" Margin="56,240,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" TextChanged="mdp_client_TextChanged"/>
+        <TextBox Name="adresse_facturation_client" HorizontalAlignment="Left" Margin="56,280,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" TextChanged="adresse_facturation_client_TextChanged"/>
+        <TextBox Name="carte_credit_client" HorizontalAlignment="Left" Margin="56,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="184" TextChanged="carte_credit_client_TextChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,60,0,0" TextWrapping="Wrap" Text="nom_client" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,100,0,0" TextWrapping="Wrap" Text="prenom_client" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,140,0,0" TextWrapping="Wrap" Text="num_tel_client" VerticalAlignment="Top"/>
@@ -25,6 +23,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="56,220,0,0" TextWrapping="Wrap" Text="mdp_client" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,260,0,0" TextWrapping="Wrap" Text="adresse_facturation_client" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,300,0,0" TextWrapping="Wrap" Text="carte_credit_client" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TitreAjoutClient" HorizontalAlignment="Left" Margin="56,27,0,0" TextWrapping="Wrap" Text="Ajout Client" VerticalAlignment="Top" Width="184" Height="33" FontSize="24" IsEnabled="False" FontFamily="Arial"/>
 
     </Grid>
 </Window>

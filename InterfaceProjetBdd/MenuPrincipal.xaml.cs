@@ -63,5 +63,12 @@ namespace InterfaceProjetBdd
             MenuStat.Show();
             this.Close();
         }
+
+        private void Stock_click(object sender, RoutedEventArgs e)
+        {
+            var Menu = new MenuStock(connectionstring);
+            Menu.Show();
+            this.Close();
+        }
     }
 }

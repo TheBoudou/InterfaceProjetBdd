@@ -1,0 +1,43 @@
+﻿<Window x:Class="InterfaceProjetBdd.MenuStock"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterfaceProjetBdd"
+        mc:Ignorable="d"
+        Title="MenuStock" Height="450" Width="800">
+    <Grid>
+        <Button Name="RetourButton" Content="Retour" HorizontalAlignment="Left" Margin="544,355,0,0" VerticalAlignment="Top" Height="22" Width="125" Click="RetourButton_Click"/>
+        <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="497,136,0,0" VerticalAlignment="Top" Width="217" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.157"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Height="323" HorizontalAlignment="Left" Margin="0,111,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="144" SelectionChanged="dataGrid1_SelectionChanged" 
+                  ScrollViewer.CanContentScroll="True" 
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <TextBlock x:Name="Titre" HorizontalAlignment="Center" Margin="0,23,0,0" TextWrapping="Wrap" Text="Gestion des Stocks" VerticalAlignment="Top" FontSize="24" FontFamily="Arial"/>
+        <TextBlock x:Name="TitreStockFleurs" HorizontalAlignment="Left" Margin="32,90,0,0" TextWrapping="Wrap" Text="Stocks Fleurs" VerticalAlignment="Top" Height="16" Width="80" FontFamily="Arial"/>
+        <ComboBox x:Name="Magasin" HorizontalAlignment="Left" Margin="356,111,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem IsSelected="True">La rose</ComboBoxItem>
+            <ComboBoxItem>DeFleurie</ComboBoxItem>
+        </ComboBox>
+        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="323" HorizontalAlignment="Left" Margin="180,111,0,0" x:Name="dataGrid2" VerticalAlignment="Top" Width="144" SelectionChanged="dataGrid2_SelectionChanged" 
+            ScrollViewer.CanContentScroll="True" 
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <TextBlock x:Name="TitreStockAccessoire" HorizontalAlignment="Left" Margin="183,90,0,0" TextWrapping="Wrap" Text="Stocks Accessoires" VerticalAlignment="Top" Height="16" Width="138" FontFamily="Arial"/>
+        <TextBlock x:Name="TitreMagasin" HorizontalAlignment="Left" Margin="356,90,0,0" TextWrapping="Wrap" Text="Stock du Magasin :" VerticalAlignment="Top" FontFamily="Arial"/>
+        <Button Name="Modif" Content="Modifier Quantité" HorizontalAlignment="Left" Margin="356,152,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Modif_Click"/>
+        <Button x:Name="Ajout" Content="Ajouter élément" HorizontalAlignment="Left" Margin="356,193,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Ajout_Click"/>
+
+
+
+    </Grid>
+</Window>
