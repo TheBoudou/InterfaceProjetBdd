@@ -25,8 +25,9 @@
         <TextBlock x:Name="Titre" HorizontalAlignment="Center" Margin="0,23,0,0" TextWrapping="Wrap" Text="Gestion des Stocks" VerticalAlignment="Top" FontSize="24" FontFamily="Arial"/>
         <TextBlock x:Name="TitreStockFleurs" HorizontalAlignment="Left" Margin="32,90,0,0" TextWrapping="Wrap" Text="Stocks Fleurs" VerticalAlignment="Top" Height="16" Width="80" FontFamily="Arial"/>
         <ComboBox x:Name="Magasin" HorizontalAlignment="Left" Margin="356,111,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
-            <ComboBoxItem IsSelected="True">La rose</ComboBoxItem>
-            <ComboBoxItem>DeFleurie</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Fleuriste du coin</ComboBoxItem>
+            <ComboBoxItem>Fleur de Lys</ComboBoxItem>
+            <ComboBoxItem>Jardin des Fleurs</ComboBoxItem>
         </ComboBox>
         <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="323" HorizontalAlignment="Left" Margin="180,111,0,0" x:Name="dataGrid2" VerticalAlignment="Top" Width="144" SelectionChanged="dataGrid2_SelectionChanged" 
             ScrollViewer.CanContentScroll="True" 
@@ -36,6 +37,7 @@
         <TextBlock x:Name="TitreMagasin" HorizontalAlignment="Left" Margin="356,90,0,0" TextWrapping="Wrap" Text="Stock du Magasin :" VerticalAlignment="Top" FontFamily="Arial"/>
         <Button Name="Modif" Content="Modifier Quantité" HorizontalAlignment="Left" Margin="356,152,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Modif_Click"/>
         <Button x:Name="Ajout" Content="Ajouter élément" HorizontalAlignment="Left" Margin="356,193,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Ajout_Click"/>
+        <Button x:Name="Supprimer" Content="Supprimer élément" HorizontalAlignment="Left" Margin="356,234,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Supprimer_Click"/>
 
 
 

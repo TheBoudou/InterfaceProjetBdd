@@ -137,5 +137,13 @@ namespace InterfaceProjetBdd
             Menu.Show();
             this.Close();
         }
+
+        private void Supprimer_Click(object sender, RoutedEventArgs e)
+        {
+            var Menu = new SupprimerObjet (connectionstring);
+            Menu.Show();
+            this.Close();
+
+        }
     }
 }

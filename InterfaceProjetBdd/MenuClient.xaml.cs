@@ -186,7 +186,9 @@ namespace InterfaceProjetBdd
 
         private void BoutonSuppr_Click(object sender, RoutedEventArgs e)
         {
-
+            var Menu = new SuppressionClient(connectionstring);
+            Menu.Show();
+            this.Close();
         }
     }
 }
