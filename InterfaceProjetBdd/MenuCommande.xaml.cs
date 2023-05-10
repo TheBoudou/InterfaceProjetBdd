@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +23,16 @@ namespace InterfaceProjetBdd
     {
         MySqlConnection Connexion;
         string connectionstring;
+        string éléments;
+        string requete;
+        string commandesql;
+        string part1;
         public MenuCommande(string connectionstring)
         {
             InitializeComponent();
-            //this.Connexion = Connexion;
+            string commande = "Select * from commande;";
             this.connectionstring = connectionstring;
+            FillGrid(connectionstring, commande);
         }
 
         private void Retour_Click(object sender, RoutedEventArgs e)
@@ -34,6 +40,71 @@ namespace InterfaceProjetBdd
             var Menu = new MenuPrincipal(connectionstring);
             Menu.Show();
             this.Close();
+        }
+
+        public void FillGrid(string connectionstring, string commande)
+        {
+
+
+
+
+            MySqlConnection connection = new MySqlConnection(connectionstring);
+            connection.Open();
+            MySqlCommand cmdSel = new MySqlCommand(commande, connection);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            try
+            {
+                da.Fill(dt);
+                dataGrid1.ItemsSource = dt.DefaultView;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            connection.Close();
+        }
+
+        private void dataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Element1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedelement = ((ComboBoxItem)Element1.SelectedItem).Content as string;
+            this.part1 = selectedelement;
+            if (selectedelement != "*" && selectedelement != " *" && selectedelement != " * ")
+            {
+                this.éléments = "num_commande," + selectedelement + " ";
+            }
+            else
+            {
+                this.éléments = selectedelement + " ";
+            }
+            this.requete = this.commandesql + this.éléments + " from commande ";
+        }
+
+        private void Element2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedelement = ((ComboBoxItem)Element2.SelectedItem).Content as string;
+            if (selectedelement != part1 && selectedelement != "")
+            {
+                if (part1 != "*" && part1 != " *" && part1 != " * ")
+                {
+                    this.éléments = "num_commande," + part1 + ", " + selectedelement + " ";
+                    this.requete = this.commandesql + this.éléments + " from commande ";
+                }
+
+
+            }
+        }
+
+        private void SelectButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.commandesql = "Select ";
+            this.requete = this.commandesql + this.éléments + " from commande ";
+            FillGrid(connectionstring, requete);
         }
     }
 }

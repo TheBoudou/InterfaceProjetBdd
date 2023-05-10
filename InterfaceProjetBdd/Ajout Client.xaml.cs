@@ -62,7 +62,7 @@ namespace InterfaceProjetBdd
                 if (mail == "")
                 {
                     MySqlCommand command1 = connection.CreateCommand();
-                    command1.CommandText = "select count(*) from clients;"; // exemple de requete bien-sur !
+                    command1.CommandText = "SELECT Max(CAST(SUBSTRING(id_client, 2) AS UNSIGNED)) AS id_int FROM clients;"; // exemple de requete bien-sur !
                     object reader = command1.ExecuteScalar();
                     int valueAsInt = Convert.ToInt32(reader);  // recuperation de la valeur de chaque cellule sous forme d'une string (voir cependant les differentes methodes disponibles !!)
                     int nb = valueAsInt;

@@ -18,6 +18,32 @@
             </Image.RenderTransform>
         </Image>
         <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="589,372,0,0" VerticalAlignment="Top" Width="130" Click="Retour_Click"/>
+        <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Height="424" HorizontalAlignment="Left" Margin="10,10,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="264" SelectionChanged="dataGrid1_SelectionChanged" 
+                  ScrollViewer.CanContentScroll="True" 
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <ComboBox x:Name="Element1" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Element1_SelectionChanged">
+            <ComboBoxItem IsSelected="True">*</ComboBoxItem>
+            <ComboBoxItem >date_commande</ComboBoxItem>
+            <ComboBoxItem>adresse_livraison</ComboBoxItem>
+            <ComboBoxItem>message</ComboBoxItem>
+            <ComboBoxItem>date_livraison</ComboBoxItem>
+            <ComboBoxItem>etat_commande</ComboBoxItem>
+            <ComboBoxItem>id_client</ComboBoxItem>
+            <ComboBoxItem>id_perso</ComboBoxItem>
+            <ComboBoxItem>id_bouquet</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="Element2" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Element2_SelectionChanged">
+            <ComboBoxItem >date_commande</ComboBoxItem>
+            <ComboBoxItem>adresse_livraison</ComboBoxItem>
+            <ComboBoxItem>message</ComboBoxItem>
+            <ComboBoxItem>date_livraison</ComboBoxItem>
+            <ComboBoxItem>etat_commande</ComboBoxItem>
+            <ComboBoxItem>id_client</ComboBoxItem>
+            <ComboBoxItem>id_perso</ComboBoxItem>
+            <ComboBoxItem>id_bouquet</ComboBoxItem>
+        </ComboBox>
+        <Button Name="SelectButton" Content="Select" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="SelectButton_Click"/>
 
     </Grid>
 </Window>
