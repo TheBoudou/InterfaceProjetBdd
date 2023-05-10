@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MenuStock" Height="450" Width="800">
     <Grid>
-        <Button Name="RetourButton" Content="Retour" HorizontalAlignment="Left" Margin="544,355,0,0" VerticalAlignment="Top" Height="22" Width="125" Click="RetourButton_Click"/>
-        <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="497,136,0,0" VerticalAlignment="Top" Width="217" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5">
+        <Button Name="RetourButton" Content="Retour" HorizontalAlignment="Left" Margin="616,355,0,0" VerticalAlignment="Top" Height="22" Width="125" Click="RetourButton_Click"/>
+        <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="569,136,0,0" VerticalAlignment="Top" Width="217" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -38,6 +38,11 @@
         <Button Name="Modif" Content="Modifier Quantité" HorizontalAlignment="Left" Margin="356,152,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Modif_Click"/>
         <Button x:Name="Ajout" Content="Ajouter élément" HorizontalAlignment="Left" Margin="356,193,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Ajout_Click"/>
         <Button x:Name="Supprimer" Content="Supprimer élément" HorizontalAlignment="Left" Margin="356,234,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Supprimer_Click"/>
+        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="146" HorizontalAlignment="Left" Margin="356,288,0,0" x:Name="dataGrid3" VerticalAlignment="Top" Width="218" SelectionChanged="dataGrid3_SelectionChanged" 
+            ScrollViewer.CanContentScroll="True" 
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+        <TextBlock HorizontalAlignment="Left" Margin="356,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" FontFamily="Arial"><Run Language="fr-fr" Text="Alerte Stock !"/></TextBlock>
 
 
 

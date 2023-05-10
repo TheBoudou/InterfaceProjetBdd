@@ -9,12 +9,16 @@
     <Grid>
         <Button Name="RetourButton" Content="Retour" HorizontalAlignment="Left" Margin="25,378,0,0" VerticalAlignment="Top" Height="22" Width="100" Click="RetourButton_Click"/>
         <Button x:Name="ModifButton" Content="Modifier" HorizontalAlignment="Left" Margin="175,378,0,0" VerticalAlignment="Top" Height="22" Width="100" Click="ModifButton_Click"/>
-        <ComboBox x:Name="Object" HorizontalAlignment="Left" Margin="25,201,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+        <ComboBox x:Name="Object" HorizontalAlignment="Left" Margin="25,146,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
         </ComboBox>
-        <TextBox Name="Ajout" HorizontalAlignment="Left" Margin="165,205,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button Name="SelectFleur" Content="Fleur" HorizontalAlignment="Left" Margin="25,153,0,0" VerticalAlignment="Top" Width="120" Click="SelectFleur_Click"/>
-        <Button Name="SelectAccessoire" Content="Accessoire" HorizontalAlignment="Left" Margin="165,153,0,0" VerticalAlignment="Top" Width="120" Click="SelectAccessoire_Click"/>
+        <TextBox Name="Ajout" HorizontalAlignment="Left" Margin="165,150,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Name="SelectFleur" Content="Fleur" HorizontalAlignment="Left" Margin="25,98,0,0" VerticalAlignment="Top" Width="120" Click="SelectFleur_Click"/>
+        <Button Name="SelectAccessoire" Content="Accessoire" HorizontalAlignment="Left" Margin="165,98,0,0" VerticalAlignment="Top" Width="120" Click="SelectAccessoire_Click"/>
         <TextBlock x:Name="TitreModif" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" Text="Modification Quantité" VerticalAlignment="Top" Width="228" Height="36" FontSize="24" FontFamily="Arial"/>
-        <TextBlock x:Name="Valeur" HorizontalAlignment="Left" Margin="165,189,0,0" TextWrapping="Wrap" Text="Valeur" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Valeur" HorizontalAlignment="Left" Margin="165,134,0,0" TextWrapping="Wrap" Text="Valeur" VerticalAlignment="Top"/>
+        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="142" HorizontalAlignment="Center" Margin="0,201,0,0" x:Name="dataGrid" VerticalAlignment="Top" Width="300" SelectionChanged="dataGrid_SelectionChanged" 
+            ScrollViewer.CanContentScroll="True" 
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
     </Grid>
 </Window>

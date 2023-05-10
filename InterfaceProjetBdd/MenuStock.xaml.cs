@@ -30,12 +30,13 @@ namespace InterfaceProjetBdd
         {
             InitializeComponent();
             this.connectionstring = connectionstring;
-            this.magasin = "La rose";
+            this.magasin = "Fleuriste du coin";
             this.id_magasin = RetourID_mag(connectionstring, this.magasin);
             this.commandefleur = "select id_fleur,quantite from stockfleur where stockfleur.id_magasin='" + this.id_magasin+"';";
             this.commandeaccessoire= "select id_accessoire,quantite from stockaccessoire where stockaccessoire.id_magasin='" + this.id_magasin + "';";
             FillGrid1(connectionstring, commandefleur);
             FillGrid2(connectionstring, commandeaccessoire);
+            FillGrid3(connectionstring);
         }
 
         private void RetourButton_Click(object sender, RoutedEventArgs e)
@@ -144,6 +145,31 @@ namespace InterfaceProjetBdd
             Menu.Show();
             this.Close();
 
+        }
+
+        private void dataGrid3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        public void FillGrid3(string connectionstring)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionstring);
+            connection.Open();
+            string commande = "Select nom_magasin,id_fleur,quantite from stockfleur,magasin where quantite < 10 and magasin.id_magasin=stockfleur.id_magasin" +" UNION "+ "Select nom_magasin,id_accessoire,quantite from stockaccessoire,magasin where quantite < 10 and magasin.id_magasin=stockaccessoire.id_magasin order by nom_magasin;";
+            MySqlCommand cmdSel = new MySqlCommand(commande, connection);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            try
+            {
+                da.Fill(dt);
+
+                dataGrid3.ItemsSource = dt.DefaultView;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            connection.Close();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,7 @@ namespace InterfaceProjetBdd
             InitializeComponent();
             this.connectionstring = connectionstring;
             this.id_magasin = id_magasin;
+            FillGrid(connectionstring);
         }
 
         private void VérificationExistence()
@@ -101,6 +103,7 @@ namespace InterfaceProjetBdd
             // Fermer la connexion et le DataReader
             reader.Close();
             connection.Close();
+            FillGrid(this.connectionstring);
         }
 
         private void SelectAccessoire_Click(object sender, RoutedEventArgs e)
@@ -134,6 +137,7 @@ namespace InterfaceProjetBdd
             // Fermer la connexion et le DataReader
             reader.Close();
             connection.Close();
+            FillGrid(this.connectionstring);
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -168,6 +172,7 @@ namespace InterfaceProjetBdd
                                 MySqlCommand cmdSel2 = new MySqlCommand(command, connection);
                                 
                             }
+                            FillGrid(this.connectionstring);
 
                         }
                         else
@@ -191,6 +196,31 @@ namespace InterfaceProjetBdd
             {
                 MessageBox.Show("Une erreur est survenue : Veuillez saisir une valeur correct.", "Erreur Critique Value", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        public void FillGrid(string connectionstring)
+        {
+            MySqlConnection connection = new MySqlConnection(connectionstring);
+            connection.Open();
+            string commande = "Select id_" + this.table + ",quantite from "+this.stocktable+" where id_magasin= '" + this.id_magasin + "';";
+            MySqlCommand cmdSel = new MySqlCommand(commande, connection);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            try
+            {
+                da.Fill(dt);
+                dataGrid.ItemsSource = dt.DefaultView;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            connection.Close();
         }
     }
 }
