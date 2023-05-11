@@ -33,7 +33,7 @@
             <ComboBoxItem>id_perso</ComboBoxItem>
             <ComboBoxItem>id_bouquet</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="Element2" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Element2_SelectionChanged">
+        <ComboBox x:Name="Element2" HorizontalAlignment="Center" Margin="0,111,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Element2_SelectionChanged">
             <ComboBoxItem >date_commande</ComboBoxItem>
             <ComboBoxItem>adresse_livraison</ComboBoxItem>
             <ComboBoxItem>message</ComboBoxItem>
@@ -43,7 +43,9 @@
             <ComboBoxItem>id_perso</ComboBoxItem>
             <ComboBoxItem>id_bouquet</ComboBoxItem>
         </ComboBox>
-        <Button Name="SelectButton" Content="Select" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="SelectButton_Click"/>
+        <Button Name="SelectButton" Content="Select All" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="SelectButton_Click"/>
+        <ComboBox x:Name="Client" HorizontalAlignment="Left" Margin="488,40,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
+        </ComboBox>
 
     </Grid>
 </Window>

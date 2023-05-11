@@ -33,6 +33,7 @@
         <ComboBox x:Name="Element1" Grid.Column="1" Margin="2,100,458,286" SelectionChanged="Element1_SelectionChanged" FontFamily="Arial">
             <ComboBoxItem IsSelected="True">*</ComboBoxItem>
             <ComboBoxItem >nom_client</ComboBoxItem>
+            <ComboBoxItem >prenom_client</ComboBoxItem>
             <ComboBoxItem >num_tel_client</ComboBoxItem>
             <ComboBoxItem>email_client</ComboBoxItem>
             <ComboBoxItem>mdp_client</ComboBoxItem>
@@ -47,6 +48,7 @@
         <ComboBox x:Name="Element2" Grid.Column="1" Margin="150,100,300,286" SelectionChanged="Element2_SelectionChanged" FontFamily="Arial">
             <ComboBoxItem IsSelected="True"></ComboBoxItem>
             <ComboBoxItem >nom_client</ComboBoxItem>
+            <ComboBoxItem >prenom_client</ComboBoxItem>
             <ComboBoxItem >num_tel_client</ComboBoxItem>
             <ComboBoxItem>email_client</ComboBoxItem>
             <ComboBoxItem>mdp_client</ComboBoxItem>

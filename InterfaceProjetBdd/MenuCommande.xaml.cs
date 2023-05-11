@@ -31,8 +31,10 @@ namespace InterfaceProjetBdd
         {
             InitializeComponent();
             string commande = "Select * from commande;";
+            this.éléments = "*";
             this.connectionstring = connectionstring;
             FillGrid(connectionstring, commande);
+            ObjectChange();
         }
 
         private void Retour_Click(object sender, RoutedEventArgs e)
@@ -105,6 +107,47 @@ namespace InterfaceProjetBdd
             this.commandesql = "Select ";
             this.requete = this.commandesql + this.éléments + " from commande ";
             FillGrid(connectionstring, requete);
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Client.SelectedItem != null)
+            {
+                string selectedelement = Client.SelectedItem.ToString();
+                string c = selectedelement;
+                this.requete="Select "+this.éléments+" from commande where id_client = '"+c+"';";
+                FillGrid(connectionstring, this.requete);
+            }
+        }
+
+        private void ObjectChange()
+        {
+            MySqlConnection connection = new MySqlConnection(this.connectionstring);
+            connection.Open();
+
+            // Effacer les éléments existants de la combobox
+            Client.Items.Clear();
+
+            // Créer une commande SQL pour récupérer les données à partir de la base de données
+            MySqlCommand command = new MySqlCommand("SELECT id_client FROM clients;", connection);
+
+            // Exécuter la commande SQL et récupérer les données dans un DataReader
+            MySqlDataReader reader = command.ExecuteReader();
+
+            // Parcourir les enregistrements du DataReader et ajouter chaque élément à la combobox
+            while (reader.Read())
+            {
+                string name = "";
+                for (int i = 0; i < reader.FieldCount; i++)    // parcours cellule par cellule
+                {
+                    string valueAsString = reader.GetValue(i).ToString();  // recuperation de la valeur de chaque cellule sous forme d'une string (voir cependant les differentes methodes disponibles !!)
+                    name = valueAsString;
+                    Client.Items.Add(name);
+                }
+            }
+
+            // Fermer la connexion et le DataReader
+            reader.Close();
         }
     }
 }
