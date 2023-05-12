@@ -27,6 +27,8 @@
         <Button x:Name="Deconnection" Content="Disconnect" HorizontalAlignment="Left" Margin="549,347,0,0" VerticalAlignment="Top" Width="115" Height="23" FontSize="16" Click="Deconnection_Click"/>
         <Button x:Name="Stock" Content="Click Here" HorizontalAlignment="Left" Margin="317,226,0,0" VerticalAlignment="Top" Height="40" Width="188" Click="Stock_click"/>
         <Label x:Name="LabelStock" Content="Gestion Stock" HorizontalAlignment="Left" Margin="317,200,0,0" VerticalAlignment="Top" Width="189" FontFamily="Arial"/>
+        <Button x:Name="Bouquet" Content="Click Here" HorizontalAlignment="Left" Margin="317,326,0,0" VerticalAlignment="Top" Height="40" Width="188" Click="Bouquet_click"/>
+        <Label x:Name="Label_Bouquet" Content="Bouquet" HorizontalAlignment="Left" Margin="317,300,0,0" VerticalAlignment="Top" Width="189" FontFamily="Arial"/>
 
     </Grid>
 </Window>

@@ -70,5 +70,12 @@ namespace InterfaceProjetBdd
             Menu.Show();
             this.Close();
         }
+
+        private void Bouquet_click(object sender, RoutedEventArgs e)
+        {
+            var Menu = new MenuBouquet(connectionstring);
+            Menu.Show();
+            this.Close();
+        }
     }
 }
