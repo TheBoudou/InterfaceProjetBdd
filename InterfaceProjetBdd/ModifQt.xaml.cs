@@ -160,7 +160,7 @@ namespace InterfaceProjetBdd
                     {
                         MySqlConnection connection = new MySqlConnection(this.connectionstring);
                         connection.Open();
-                        string command = "UPDATE " + this.stocktable + " SET quantite = +" + num + " WHERE id_" + this.table + " = '" + this.objet + "' and id_magasin= '" + this.id_magasin + "';";
+                        string command = "UPDATE " + this.stocktable + " SET quantite = " + num + " WHERE id_" + this.table + " = '" + this.objet + "' and id_magasin= '" + this.id_magasin + "';";
                         MySqlCommand cmdSel = new MySqlCommand(command, connection);
                         int rowsAffected = cmdSel.ExecuteNonQuery();
                         if (rowsAffected > 0)

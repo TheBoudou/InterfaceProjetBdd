@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,6 +28,7 @@ namespace InterfaceProjetBdd
         string requete;
         string commandesql;
         string part1;
+        string etat;
         public MenuCommande(string connectionstring)
         {
             InitializeComponent();
@@ -148,6 +150,59 @@ namespace InterfaceProjetBdd
 
             // Fermer la connexion et le DataReader
             reader.Close();
+        }
+
+        private void ModifButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MySqlConnection connection = new MySqlConnection(this.connectionstring);
+                connection.Open();
+                string command = "UPDATE commande SET etat_commande = '" + this.etat + "' WHERE num_commande = '" + Numcom.Text + "';";
+                MySqlCommand cmdSel = new MySqlCommand(command, connection);
+                int rowsAffected = cmdSel.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Modification réussie", "Modification Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Erreur de modification : Aucune commande à modifier", "Modification Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur de modification ", "Modification Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Statut_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Statut.SelectedItem != null)
+            {
+                string selectedelement = Statut.SelectedItem.ToString();
+                string c = selectedelement.Replace("System.Windows.Controls.ComboBoxItem : ", "");
+                this.etat = c;
+            }
+        }
+
+        private void Statutselect_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Statutselect.SelectedItem != null)
+            {
+                string selectedelement = Statutselect.SelectedItem.ToString();
+                string ca = selectedelement.Replace("System.Windows.Controls.ComboBoxItem : ","");
+                Console.Write(ca);
+                this.requete = "Select "+this.éléments+" from commande where etat_commande = '"+ca+"';";
+                FillGrid(connectionstring, this.requete);
+            }
+        }
+
+        private void Numcom_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
