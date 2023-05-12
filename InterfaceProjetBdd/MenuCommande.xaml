@@ -46,6 +46,22 @@
         <Button Name="SelectButton" Content="Select All" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="SelectButton_Click"/>
         <ComboBox x:Name="Client" HorizontalAlignment="Left" Margin="488,40,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
         </ComboBox>
+        <Button x:Name="ModifButton" Content="Modifier Statut" HorizontalAlignment="Center" Margin="0,153,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="ModifButton_Click" />
+        <TextBox Name="Numcom" HorizontalAlignment="Center" Margin="0,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="Numcom_TextChanged"/>
+        <ComboBox Name="Statut" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Statut_SelectionChanged">
+            <ComboBoxItem>CC</ComboBoxItem>
+            <ComboBoxItem>CAL</ComboBoxItem>
+            <ComboBoxItem>CL</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="Statutselect" HorizontalAlignment="Left" Margin="488,79,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Statutselect_SelectionChanged">
+            <ComboBoxItem >VINV</ComboBoxItem>
+            <ComboBoxItem >CC</ComboBoxItem>
+            <ComboBoxItem >CPAV</ComboBoxItem>
+            <ComboBoxItem>CAL</ComboBoxItem>
+            <ComboBoxItem>CL</ComboBoxItem>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Left" Margin="488,19,0,0" TextWrapping="Wrap" Text="Tri par Client" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="488,62,0,0" TextWrapping="Wrap" Text="Tri par Etat" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
