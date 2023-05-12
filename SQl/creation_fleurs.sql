@@ -58,7 +58,6 @@ dispo_accessoire BOOL
 DROP TABLE IF EXISTS fleur;
 CREATE  TABLE IF NOT EXISTS fleur
 (id_fleur VARCHAR(40) PRIMARY KEY,
-couleur VARCHAR(40),
 prix_fleur FLOAT,
 dispo_fleur BOOL
 );
@@ -66,7 +65,7 @@ dispo_fleur BOOL
 
 DROP TABLE IF EXISTS composition;
 CREATE  TABLE IF NOT EXISTS composition
-(prix_composition FLOAT,
+(quantite FLOAT,
 id_accessoire VARCHAR(40), FOREIGN KEY(id_accessoire) REFERENCES accessoire(id_accessoire),
 id_fleur VARCHAR(40), FOREIGN KEY(id_fleur) REFERENCES fleur(id_fleur),
 id_perso VARCHAR(40), FOREIGN KEY(id_perso) REFERENCES bouquet_perso(id_perso),

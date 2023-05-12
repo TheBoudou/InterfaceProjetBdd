@@ -1,0 +1,30 @@
+﻿<Window x:Class="InterfaceProjetBdd.StatClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterfaceProjetBdd"
+        mc:Ignorable="d"
+        Title="StatClient" Height="450" Width="800">
+    <Grid>
+        <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="546,133,0,0" VerticalAlignment="Top" Width="217" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.157"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="589,372,0,0" VerticalAlignment="Top" Width="130" Click="Retour_Click"/>
+        <TextBox x:Name="nom_client" HorizontalAlignment="Left" Margin="262,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="nom_client_TextChanged"/>
+        <Button x:Name="MeilleurClientMois" Content="Meilleur client du mois" HorizontalAlignment="Left" Height="35" Margin="35,38,0,0" VerticalAlignment="Top" Width="130" Click="MeilleurClientMois_Click"/>
+        <Button x:Name="MeilleurClientAnnee" Content="Meilleur client de l'année" HorizontalAlignment="Left" Height="41" Margin="35,78,0,0" VerticalAlignment="Top" Width="130" Click="MeilleurClientAnnee_Click"/>
+        <DataGrid x:Name="AffichagePrincipal" HorizontalAlignment="Left" Height="206" Margin="0,228,0,0" VerticalAlignment="Top" Width="523" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <TextBox HorizontalAlignment="Left" Margin="262,61,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="262,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="262,113,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

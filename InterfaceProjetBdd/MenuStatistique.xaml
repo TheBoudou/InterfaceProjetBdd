@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InterfaceProjetBdd"
         mc:Ignorable="d"
-        Title="MenuStatistique" Height="450" Width="800">
+        Title="MenuStatistique" Height="450" Width="200">
+   
     <Grid>
-        <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="546,133,0,0" VerticalAlignment="Top" Width="217" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5">
+        <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="28,212,0,0" VerticalAlignment="Top" Width="136" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5" Height="129">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -17,13 +18,12 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="589,372,0,0" VerticalAlignment="Top" Width="130" Click="Retour_Click"/>
-        <Button Name="MeilleurClientMois" Content="Meilleur client du mois" HorizontalAlignment="Left" Height="35" Margin="35,38,0,0" VerticalAlignment="Top" Width="130" Click="MeilleurClientMois_Click"/>
-        <DataGrid Name="AffichagePrincipal" HorizontalAlignment="Left" Height="206" Margin="0,228,0,0" VerticalAlignment="Top" Width="523" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Button Name="MeilleurClientAnnee" Content="Meilleur client de l'année" HorizontalAlignment="Left" Height="41" Margin="35,78,0,0" VerticalAlignment="Top" Width="130" Click="MeilleurClientAnnee_Click"/>
-        <TextBox x:Name="nom_client" HorizontalAlignment="Left" Margin="262,73,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="nom_client_TextChanged"/>
-        <Button Name="BouqueStdSucces" Content="Bouquet ayant le plus de succès" HorizontalAlignment="Left" Margin="35,124,0,0" VerticalAlignment="Top" Height="43" Width="188" Click="BouqueStdSucces_Click"/>
-        <Button Name="MasasinGrosCA" Content="Magasin ayant le plus gros CA" HorizontalAlignment="Left" Margin="35,172,0,0" VerticalAlignment="Top" Width="227" Click="MasasinGrosCA_Click"/>
+        <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="35,360,0,0" VerticalAlignment="Top" Width="130" Click="Retour_Click"/>
+        <Button Name="StatClient" Content="Statistiques Clients" HorizontalAlignment="Left" Margin="35,33,0,0" VerticalAlignment="Top" Height="31" Width="121" Click="StatClient_Click_1"/>
+        <Button Name="StatProduits" Content="Statistiques Produits" HorizontalAlignment="Left" Margin="35,73,0,0" VerticalAlignment="Top" Height="29" Width="121" Click="StatProduits_Click"/>
+        <Button Name="StatBouquets" Content="Statistiques Bouquets" HorizontalAlignment="Left" Margin="35,118,0,0" VerticalAlignment="Top" Height="20" Width="121" Click="StatBouquets_Click"/>
+        <Button Name="StatCommandes" Content="Statistiques Commandes" HorizontalAlignment="Left" Margin="35,152,0,0" VerticalAlignment="Top" Width="121" Click="StatCommandes_Click"/>
+        <Button Name="StatMagasins" Content="Statistiques Magasins" HorizontalAlignment="Left" Margin="35,177,0,0" VerticalAlignment="Top" Height="26" Width="121" Click="StatMagasins_Click"/>
 
     </Grid>
 </Window>

@@ -98,42 +98,42 @@ VALUES
 
     
     
-INSERT INTO `fleurs`.`fleur` (`id_fleur`,`couleur`,`prix_fleur`,`dispo_fleur`)
-VALUES ('rose', 'rouge', 1.99, true),
-       ('tulipe', 'jaune', 2.99, true),
-       ('lys', 'blanc', 2.50, true),
-       ('pivoine', 'rose', 1.75, false),
-       ('orchidée', 'blanc', 3.25, true),
-       ('marguerite', 'jaune', 1.99, true),
-       ('lila', 'jaune', 0.99, false),
-       ('chrysanthème', 'rose', 1.50, true),
-       ('dahlia', 'rouge', 4.50, false),
-       ('hortensia', 'bleu', 3.75, true),
-       ('violette', 'violet', 2.25, true),
-       ('tournesol', 'jaune', 2.99, true),
-       ('oeillet', 'blanc', 3.50, true),
-       ('jonquille', 'jaune', 4.50, true),
-       ('lavande','violet',3,True),
-       ('muguet','blanc',2,False),
-       ('vide','vide',0,False);
+INSERT INTO `fleurs`.`fleur` (`id_fleur`,`prix_fleur`,`dispo_fleur`)
+VALUES ('rose', 1.99, true),
+       ('tulipe', 2.99, true),
+       ('lys', 2.50, true),
+       ('pivoine', 1.75, false),
+       ('orchidée', 3.25, true),
+       ('marguerite', 1.99, true),
+       ('lila', 0.99, false),
+       ('chrysanthème', 1.50, true),
+       ('dahlia', 4.50, false),
+       ('hortensia', 3.75, true),
+       ('violette', 2.25, true),
+       ('tournesol', 2.99, true),
+       ('oeillet', 3.50, true),
+       ('jonquille', 4.50, true),
+       ('lavande',3,True),
+       ('muguet',2,False),
+       ('vide',0,False);
    
 
        
        
-INSERT INTO `fleurs`.`composition` (`prix_composition`, `id_accessoire`, `id_fleur`, `id_perso`, `id_bouquet`)
+INSERT INTO `fleurs`.`composition` (`quantite`, `id_accessoire`, `id_fleur`, `id_perso`, `id_bouquet`)
 VALUES
-(20, 'Bocal verre', 'dahlia', 'Bouquet1', 'vide'),
-(15, 'Bulle fleurie', 'rose', 'Bouquet2', 'vide'),
-(18, 'vide', 'tulipe', 'Bouquet3', 'vide'),
-(22, 'Corde jute', 'vide', 'Bouquet4', 'vide'),
-(25, 'vide', 'hortensia', 'vide', 'std1'),
-(30, 'Carton carré', 'vide', 'vide', 'std2'),
-(35, 'Récipient zinc', 'lys', 'vide', 'std3'),
-(40, 'vide', 'vide', 'vide', 'std4'),
-(20, 'Grand vase', 'tulipe', 'Bouquet6', 'vide'),
-(15, 'Bocal verre', 'violette', 'Bouquet7', 'vide'),
-(18, 'vide', 'lila', 'Bouquet8', 'vide'),
-(20,'Pot','tulipe', 'Bouquet1','vide');
+(2, 'vide', 'dahlia', 'Bouquet1', 'vide'),
+(4, 'Bulle fleurie', 'vide', 'Bouquet2', 'vide'),
+(3, 'vide', 'tulipe', 'Bouquet3', 'vide'),
+(2, 'Corde jute', 'vide', 'Bouquet4', 'vide'),
+(1, 'vide', 'hortensia', 'vide', 'std1'),
+(3, 'Carton carré', 'vide', 'vide', 'std2'),
+(5, 'vide', 'lys', 'vide', 'std3'),
+(4, 'vide', 'vide', 'vide', 'std4'),
+(2, 'Grand vase', 'vide', 'Bouquet6', 'vide'),
+(1, 'vide', 'violette', 'Bouquet7', 'vide'),
+(1, 'vide', 'lila', 'Bouquet8', 'vide'),
+(2,'vide','tulipe', 'Bouquet1','vide');
 
 
 
@@ -143,7 +143,101 @@ INSERT INTO `fleurs`.`magasin` (`id_magasin`,`nom_magasin`,`adresse_magasin`,`ch
 ('MG03', 'Jardin des Fleurs', '32 Avenue de la Paix, 13001 Marseille', 98000);
 
 
+INSERT INTO `fleurs`.`stockfleur` (`id_fleur`,`id_magasin`,`quantite`)
+VALUES 
+       ('rose', 'MG01', 5),
+       ('tulipe', 'MG01', 4),
+       ('lys', 'MG01', 7),
+       ('pivoine', 'MG01', 15),
+       ('orchidée', 'MG01', 10),
+       ('marguerite', 'MG01', 9),
+       ('lila', 'MG01', 20),
+       ('chrysanthème', 'MG01', 14),
+       ('dahlia', 'MG01', 13),
+       ('hortensia', 'MG01', 10),
+       ('violette', 'MG01', 14),
+       ('tournesol', 'MG01', 8),
+       ('oeillet', 'MG01', 1),
+       ('jonquille', 'MG01', 3),
+       ('lavande', 'MG01',25),
+       ('muguet', 'MG01',16),
+       
+        ('rose', 'MG02', 12),
+       ('tulipe', 'MG02', 21),
+       ('lys', 'MG02', 2),
+       ('pivoine', 'MG02', 4),
+       ('orchidée', 'MG02', 16),
+       ('marguerite', 'MG02', 8),
+       ('lila', 'MG02', 7),
+       ('chrysanthème', 'MG02', 5),
+       ('dahlia', 'MG02', 10),
+       ('hortensia', 'MG02', 8),
+       ('violette', 'MG02', 7),
+       ('tournesol', 'MG02', 9),
+       ('oeillet', 'MG02', 12),
+       ('jonquille', 'MG02', 10),
+       ('lavande', 'MG02',12),
+       ('muguet', 'MG02',4),
+       
+        ('rose', 'MG03', 7),
+       ('tulipe', 'MG03', 9),
+       ('lys', 'MG03', 8),
+       ('pivoine', 'MG03', 10),
+       ('orchidée', 'MG03', 2),
+       ('marguerite', 'MG03', 5),
+       ('lila', 'MG03', 1),
+       ('chrysanthème', 'MG03', 4),
+       ('dahlia', 'MG03', 7),
+       ('hortensia', 'MG03', 16),
+       ('violette', 'MG03', 10),
+       ('tournesol', 'MG03', 4),
+       ('oeillet', 'MG03', 5),
+       ('jonquille', 'MG03', 3),
+       ('lavande', 'MG03',2),
+       ('muguet', 'MG03',4);
 
+
+INSERT INTO `fleurs`.`stockaccessoire` (`id_accessoire`,`id_magasin`,`quantite`) VALUES 
+	
+    ('Petit vase', 'MG01', 2),
+    ('Corde jute', 'MG01', 1),
+    ('Grand vase', 'MG01', 4),
+    ('Bocal verre', 'MG01', 5),
+    ('Cuivre laqué', 'MG01', 2),
+    ('Bulle fleurie', 'MG01', 4),
+    ('Carton carré', 'MG01', 2),
+    ('Attrape rêve', 'MG01', 7),
+    ('Composition chien', 'MG01', 5),
+    ('Récipient zinc', 'MG01', 6),
+    ('Pot','MG01',3),
+
+
+
+	('Petit vase', 'MG02', 2),
+    ('Corde jute', 'MG02', 7),
+    ('Grand vase', 'MG02', 10),
+    ('Bocal verre', 'MG02', 8),
+    ('Cuivre laqué', 'MG02', 9),
+    ('Bulle fleurie', 'MG02', 4),
+    ('Carton carré', 'MG02', 14),
+    ('Attrape rêve', 'MG02', 15),
+    ('Composition chien', 'MG02', 1),
+    ('Récipient zinc', 'MG02', 8),
+    ('Pot','MG02',7),
+
+
+	('Petit vase', 'MG03', 18),
+    ('Corde jute', 'MG03', 15),
+    ('Grand vase', 'MG03', 22),
+    ('Bocal verre', 'MG03', 20),
+    ('Cuivre laqué', 'MG03', 14),
+    ('Bulle fleurie', 'MG03', 10),
+    ('Carton carré', 'MG03', 12),
+    ('Attrape rêve', 'MG03', 11),
+    ('Composition chien', 'MG03', 18),
+    ('Récipient zinc', 'MG03', 17),
+    ('Pot','MG03',6);
+    
 
 
 

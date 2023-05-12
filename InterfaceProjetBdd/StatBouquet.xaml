@@ -1,0 +1,25 @@
+﻿<Window x:Class="InterfaceProjetBdd.StatBouquet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InterfaceProjetBdd"
+        mc:Ignorable="d"
+        Title="StatBouquet" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="589,372,0,0" VerticalAlignment="Top" Width="130" Click="Retour_Click"/>
+        <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="546,133,0,0" VerticalAlignment="Top" Width="217" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.157"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button x:Name="BouqueStdSucces" Content="Bouquet ayant le plus de succès" HorizontalAlignment="Left" Margin="80,83,0,0" VerticalAlignment="Top" Height="43" Width="188" Click="BouqueStdSucces_Click"/>
+        <TextBox x:Name="nom_client" HorizontalAlignment="Left" Margin="589,44,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="nom_client_TextChanged"/>
+
+    </Grid>
+</Window>
