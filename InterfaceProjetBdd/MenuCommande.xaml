@@ -46,7 +46,7 @@
         <Button Name="SelectButton" Content="Select All" HorizontalAlignment="Center" Margin="0,38,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="SelectButton_Click"/>
         <ComboBox x:Name="Client" HorizontalAlignment="Left" Margin="488,40,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
         </ComboBox>
-        <Button x:Name="ModifButton" Content="Modifier Statut" HorizontalAlignment="Center" Margin="0,153,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="ModifButton_Click" />
+        <Button x:Name="ModifButton" Content="Modifier Etat" HorizontalAlignment="Center" Margin="0,153,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="ModifButton_Click" />
         <TextBox Name="Numcom" HorizontalAlignment="Center" Margin="0,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="Numcom_TextChanged"/>
         <ComboBox Name="Statut" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Statut_SelectionChanged">
             <ComboBoxItem>CC</ComboBoxItem>
@@ -62,6 +62,13 @@
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="488,19,0,0" TextWrapping="Wrap" Text="Tri par Client" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="488,62,0,0" TextWrapping="Wrap" Text="Tri par Etat" VerticalAlignment="Top"/>
+        <Button x:Name="ModifButton2" Content="Lier BouquetPerso" HorizontalAlignment="Center" Margin="0,283,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="ModifButton2_Click" />
+        <ComboBox x:Name="BouquetPerso" HorizontalAlignment="Center" Margin="0,325,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Bouquet_SelectionChanged">
+        </ComboBox>
+        <TextBox Name="numcomperso" HorizontalAlignment="Center" Margin="0,364,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="340,183,0,0" TextWrapping="Wrap" Text="Num de commande" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="340,347,0,0" TextWrapping="Wrap" Text="Num de commande" VerticalAlignment="Top"/>
+
 
     </Grid>
 </Window>
