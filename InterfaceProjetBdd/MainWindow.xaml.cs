@@ -69,13 +69,13 @@ namespace InterfaceProjetBdd
                         command.CommandText = "select id_client from clients where mdp_client = '" + password + "';";
                         MySqlDataReader reader;
                         reader = command.ExecuteReader();
-                        string id = "";
+                        List<string> id = new List<string>();
                         while (reader.Read())                           // parcours ligne par ligne
                         {
-                            id = reader.GetValue(0).ToString();  // recuperation de la valeur de chaque cellule sous forme d'une string (voir cependant les differentes methodes disponibles !!)
+                            id.Add(reader.GetValue(0).ToString());  // recuperation de la valeur de chaque cellule sous forme d'une string (voir cependant les differentes methodes disponibles !!)
                         }
                         reader.Close();
-                        if (id != "" && id==user)
+                        if (id.Count!=0 && id.Contains(user))
                         {
                             MessageBox.Show("Connection réussie avec l'utilisateur : " + ID.Text, "Connection Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             var Menu = new MenuPourClient(connectionstring,user);

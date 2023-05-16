@@ -205,8 +205,8 @@ namespace InterfaceProjetBdd
 
             // final
             //insertion nouveau bouquet perso
-            command.CommandText = "INSERT INTO `fleurs`.`bouquet_perso` (`id_perso`,`description_bouquet`,`prix_max`)"
-            + "VALUES ('" + this.id_bouquet + "', \"" + this.description + "\", '" + this.prix + "');";
+            command.CommandText = "INSERT INTO `fleurs`.`bouquet_perso` (`id_perso`,`description_bouquet`,`prix_max`,`prix`)"
+            + "VALUES ('" + this.id_bouquet + "', \"" + this.description + "\", '" + this.prix + "',0);";
             command.ExecuteNonQuery();
 
             //insertion commande

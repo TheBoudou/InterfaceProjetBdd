@@ -42,6 +42,7 @@ adresse_livraison VARCHAR(40),
 message VARCHAR(40),
 date_livraison DATETIME,
 etat_commande VARCHAR(40),
+prix_commande INTEGER,
 id_client VARCHAR(40), FOREIGN KEY(id_client) REFERENCES clients(id_client),
 id_perso VARCHAR(40), FOREIGN KEY(id_perso) REFERENCES bouquet_perso(id_perso),
 id_bouquet VARCHAR(40), FOREIGN KEY(id_bouquet) REFERENCES bouquet_std(id_bouquet)

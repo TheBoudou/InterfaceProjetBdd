@@ -247,7 +247,7 @@ namespace InterfaceProjetBdd
 
             //insertion commande
             command.CommandText = "INSERT INTO `fleurs`.`commande` (`num_commande`,`date_commande`,`adresse_livraison`,`message`,`date_livraison`,`etat_commande`,`id_client`,`id_perso`,`id_bouquet`,`prix_commande`)"
-            +"VALUES ('"+this.num_commande+ "', '"+this.date_commande+ "', '"+this.adresse_livraison+ "', '"+this.message+ "', '"+this.date_livraison+ "', '"+this.etat_commande+ "', '"+this.id+ "', 'vide', '"+this.id_bouquet+ "', '"+this.prix+"');";
+            +"VALUES ('"+this.num_commande+ "', '"+this.date_commande+ "', '"+this.adresse_livraison+ "', '"+this.message+ "', '"+this.date_livraison+ "', '"+this.etat_commande+ "', '"+this.id+ "', 'vide', '"+this.id_bouquet+ "', "+this.prix+");";
             command.ExecuteNonQuery();
 
             //incrementer commande et commande mois

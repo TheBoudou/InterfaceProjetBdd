@@ -129,7 +129,6 @@ namespace InterfaceProjetBdd
             MySqlConnection connection = new MySqlConnection(this.connectionstring);
             connection.Open();
 
-            // Effacer les éléments existants de la combobox
             Client.Items.Clear();
 
             // Créer une commande SQL pour récupérer les données à partir de la base de données
@@ -152,6 +151,10 @@ namespace InterfaceProjetBdd
 
             // Fermer la connexion et le DataReader
             reader.Close();
+
+
+
+
         }
 
         private void ModifButton_Click(object sender, RoutedEventArgs e)
@@ -212,7 +215,7 @@ namespace InterfaceProjetBdd
             connection.Open();
 
             // Effacer les éléments existants de la combobox
-            Client.Items.Clear();
+            BouquetPerso.Items.Clear();
 
             // Créer une commande SQL pour récupérer les données à partir de la base de données
             MySqlCommand command = new MySqlCommand("SELECT id_perso FROM bouquet_perso;", connection);
@@ -273,10 +276,10 @@ namespace InterfaceProjetBdd
                         int rowsAffected = cmdSel.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            try
+                            /*try
                             {
                                 MySqlCommand command3 = connection.CreateCommand();
-                                command3.CommandText = "select prix_max from bouquet_perso where id_perso = '" + this.bouquet + "';";
+                                command3.CommandText = "select prix from bouquet_perso where id_perso = '" + this.bouquet + "';";
                                 reader = command3.ExecuteReader();
                                 float prixbouquet = 0;
                                 while (reader.Read())                           // parcours ligne par ligne
@@ -301,7 +304,7 @@ namespace InterfaceProjetBdd
                                 {
                                     prixbouquet = prixbouquet * 95 / 100;
                                 }
-                                string command5 = "UPDATE bouquet_perso SET prix_max = '" + prixbouquet + "' WHERE id_perso = '" + this.bouquet + "';";
+                                string command5 = "UPDATE bouquet_perso SET prix = " + prixbouquet + " WHERE id_perso = '" + this.bouquet + "';";
                                 MySqlCommand final = new MySqlCommand(command5, connection);
                                 int rowsAffected2 = final.ExecuteNonQuery();
                                 if (rowsAffected2 > 0)
@@ -318,9 +321,10 @@ namespace InterfaceProjetBdd
                             catch(Exception ex)
                             {
                                 MessageBox.Show("Erreur de modification du prix", "Modification Error 4", MessageBoxButton.OK, MessageBoxImage.Error);
-                            }
-                            
-                            
+                            }*/
+                            MessageBox.Show("Modification réussie", "Modification Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                           
+
 
 
                         }

@@ -12,19 +12,21 @@ VALUES
 ('C10', 'Girard', 'Sophie', '0624252627', 'sophie.girard@mail.com', 'wxyzab', '10 rue des Dahlias, Montpellier', '0123 4567 8901 2345', 4, 1, 'Or'),
 ('C11','Meyer','Rubert','0645751218','rubert.meyer@gmail.com','123456','2 rue de seres,Paris','4561 2531 7894 5684',3,0,'Bronze');
 
-
+INSERT INTO `fleurs`.`clients` (`id_client`,`nom_client`,`prenom_client`,`num_tel_client`,`email_client`,`mdp_client`,`adresse_facturation_client`,`carte_credit_client`,`nb_commandes`,`nb_commandes_mois`,`Statut`)
+VALUES
+('C12', 'Durandnn', 'Jeannn', '06010203044', 'jean.durandoo@mail.com', '123456', '1 rue des Fleurs, Paris', '1234 5678 9012 3456', 0, 0, 'vide');
 
 INSERT INTO `fleurs`.`bouquet_perso` (`id_perso`,`description_bouquet`,`prix_max`)
 VALUES
-('Bouquet1', 'Bouquet de roses rouges et blanches', 50.0),
-('Bouquet2', 'Bouquet de pivoines et d''oeillets', 45.0),
-('Bouquet3', 'Bouquet de tournesols et de gerberas', 40.0),
-('Bouquet4', 'Bouquet de lys et de freesias', 55.0),
-('Bouquet5', 'Bouquet de roses roses et d''oeillets', 35.0),
-('Bouquet6', 'Bouquet de dahlias et de chrysanthèmes', 30.0),
-('Bouquet7', 'Bouquet de renoncules et de marguerites', 38.0),
-('Bouquet8', 'Bouquet de violettes et de campanules', 42.0),
-('Bouquet9', 'Bouquet de pivoines et de roses blanches', 48.0),
+('Bouquet01', 'Bouquet de roses rouges et blanches', 50.0),
+('Bouquet02', 'Bouquet de pivoines et d''oeillets', 45.0),
+('Bouquet03', 'Bouquet de tournesols et de gerberas', 40.0),
+('Bouquet04', 'Bouquet de lys et de freesias', 55.0),
+('Bouquet05', 'Bouquet de roses roses et d''oeillets', 35.0),
+('Bouquet06', 'Bouquet de dahlias et de chrysanthèmes', 30.0),
+('Bouquet07', 'Bouquet de renoncules et de marguerites', 38.0),
+('Bouquet08', 'Bouquet de violettes et de campanules', 42.0),
+('Bouquet09', 'Bouquet de pivoines et de roses blanches', 48.0),
 ('Bouquet10', 'Bouquet de lisianthus et de delphiniums', 52.0),
 ('Bouquet11', 'Bouquet de roses oranges et de gerberas', 36.0),
 ('Bouquet12', 'Bouquet de tulipes et de jonquilles', 33.0),
@@ -60,22 +62,22 @@ VALUES
 ('vide','vide',0,'vide');
 
 
-INSERT INTO `fleurs`.`commande` (`num_commande`,`date_commande`,`adresse_livraison`,`message`,`date_livraison`,`etat_commande`,`id_client`,`id_perso`,`id_bouquet`)
+INSERT INTO `fleurs`.`commande` (`num_commande`,`date_commande`,`adresse_livraison`,`message`,`date_livraison`,`etat_commande`,`id_client`,`id_perso`,`id_bouquet`,`prix_commande`)
 VALUES
-('1', '2023-04-28', '12 Rue de la Paix, Paris', 'Joyeux Anniversaire', '2023-05-30', 'VINV', 'C1', 'vide', 'std1'),
-('2', '2023-04-29', '45 Rue de la Roquette, Lyon', 'Félicitations', '2023-05-20', 'CC', 'C2', 'vide', 'std10'),
-('3', '2023-04-29', '5 Avenue des Champs-Élysées, Paris', 'Bonne Fête', '2023-05-15', 'CPAV', 'C3', 'Bouquet9', 'vide'),
-('4', '2023-04-29', '28 Rue Sainte-Catherine, Bordeaux', 'vide', '2023-05-17', 'CAL', 'C4', 'Bouquet10', 'vide'),
-('5', '2023-04-30', '9 Rue de la République, Marseille', 'Joyeuses Pâques', '2023-05-04', 'CL', 'C5', 'vide', 'std1'),
-('6', '2023-04-30', '1 Place de la Comédie, Montpellier', 'vide', '2023-05-24', 'CAL', 'C6', 'Bouquet6', 'vide'),
-('7', '2023-05-01', '16 Rue des Archives, Paris', 'Bonne Fête des Mères', '2023-05-26', 'CPAV', 'C7', 'Bouquet4','vide'),
-('8', '2023-05-01', '78 Rue de la Pompe, Neuilly-sur-Seine', 'Joyeux Anniversaire', '2023-05-27', 'CC', 'C8', 'vide', 'std4'),
-('9', '2023-05-01', '2 Rue de la République, Lyon', 'vide', '2023-05-30', 'VINV', 'C9', 'vide', 'std3'),
-('10', '2023-05-02', '50 Rue de la République, Lille', 'Bonne Fête des Pères', '2023-05-03', 'CL', 'C9', 'vide', 'std1'),
-('11', '2023-05-02', '10 Rue de la Convention, Marseille', 'vide', '2023-05-24', 'CAL', 'C11', 'vide', 'std5'),
-('12','2002-01-15','15 avenue de serre, Paris','Vite svp','2002-01-20','CL','C10','Bouquet1','vide'),
-('13','2020-01-15','15 avenue de serre, Paris','Allez','2020-01-20','CL','C10','Bouquet2','vide'),
-('14','2021-01-20','15 avenue de serre, Paris','Yes','2021-01-25','CL','C10','Bouquet3','vide');
+('1', '2023-04-28', '12 Rue de la Paix, Paris', 'Joyeux Anniversaire', '2023-05-30', 'VINV', 'C1', 'vide', 'std1',20),
+('2', '2023-04-29', '45 Rue de la Roquette, Lyon', 'Félicitations', '2023-05-20', 'CC', 'C2', 'vide', 'std10',24),
+('3', '2023-04-29', '5 Avenue des Champs-Élysées, Paris', 'Bonne Fête', '2023-05-15', 'CPAV', 'C3', 'Bouquet09', 'vide',35),
+('4', '2023-04-29', '28 Rue Sainte-Catherine, Bordeaux', 'vide', '2023-05-17', 'CAL', 'C4', 'Bouquet10', 'vide',45),
+('5', '2023-04-30', '9 Rue de la République, Marseille', 'Joyeuses Pâques', '2023-05-04', 'CL', 'C5', 'vide', 'std1',32),
+('6', '2023-04-30', '1 Place de la Comédie, Montpellier', 'vide', '2023-05-24', 'CAL', 'C6', 'Bouquet06', 'vide',62),
+('7', '2023-05-01', '16 Rue des Archives, Paris', 'Bonne Fête des Mères', '2023-05-26', 'CPAV', 'C7', 'Bouquet04','vide',42),
+('8', '2023-05-01', '78 Rue de la Pompe, Neuilly-sur-Seine', 'Joyeux Anniversaire', '2023-05-27', 'CC', 'C8', 'vide', 'std4',34),
+('9', '2023-05-01', '2 Rue de la République, Lyon', 'vide', '2023-05-30', 'VINV', 'C9', 'vide', 'std3',14),
+('10', '2023-05-02', '50 Rue de la République, Lille', 'Bonne Fête des Pères', '2023-05-03', 'CL', 'C9', 'vide', 'std1',35),
+('11', '2023-05-02', '10 Rue de la Convention, Marseille', 'vide', '2023-05-24', 'CAL', 'C11', 'vide', 'std5',24),
+('12','2002-01-15','15 avenue de serre, Paris','Vite svp','2002-01-20','CL','C10','Bouquet01','vide',26),
+('13','2020-01-15','15 avenue de serre, Paris','Allez','2020-01-20','CL','C10','Bouquet02','vide',25),
+('14','2021-01-20','15 avenue de serre, Paris','Yes','2021-01-25','CL','C10','Bouquet03','vide',14);
 
 
 
@@ -122,18 +124,18 @@ VALUES ('rose', 1.99, true),
        
 INSERT INTO `fleurs`.`composition` (`quantite`, `id_accessoire`, `id_fleur`, `id_perso`, `id_bouquet`)
 VALUES
-(2, 'vide', 'dahlia', 'Bouquet1', 'vide'),
-(4, 'Bulle fleurie', 'vide', 'Bouquet2', 'vide'),
-(3, 'vide', 'tulipe', 'Bouquet3', 'vide'),
-(2, 'Corde jute', 'vide', 'Bouquet4', 'vide'),
+(2, 'vide', 'dahlia', 'Bouquet01', 'vide'),
+(4, 'Bulle fleurie', 'vide', 'Bouquet02', 'vide'),
+(3, 'vide', 'tulipe', 'Bouquet03', 'vide'),
+(2, 'Corde jute', 'vide', 'Bouquet04', 'vide'),
 (1, 'vide', 'hortensia', 'vide', 'std1'),
 (3, 'Carton carré', 'vide', 'vide', 'std2'),
 (5, 'vide', 'lys', 'vide', 'std3'),
 (4, 'vide', 'vide', 'vide', 'std4'),
-(2, 'Grand vase', 'vide', 'Bouquet6', 'vide'),
-(1, 'vide', 'violette', 'Bouquet7', 'vide'),
-(1, 'vide', 'lila', 'Bouquet8', 'vide'),
-(2,'vide','tulipe', 'Bouquet1','vide');
+(2, 'Grand vase', 'vide', 'Bouquet06', 'vide'),
+(1, 'vide', 'violette', 'Bouquet07', 'vide'),
+(1, 'vide', 'lila', 'Bouquet08', 'vide'),
+(2,'vide','tulipe', 'Bouquet01','vide');
 
 
 
@@ -256,7 +258,10 @@ INSERT INTO achat_dans (id_client, id_magasin) VALUES
 
 
 CREATE USER 'bozo'@'localhost' IDENTIFIED BY 'user';
-GRANT SELECT ON fleurs.clients TO 'bozo'@'localhost';
-Grant insert on fleurs.commande to 'bozo'@'localhost';
+GRANT SELECT, UPDATE ON fleurs.clients TO 'bozo'@'localhost';
+Grant SELECT, INSERT on fleurs.commande to 'bozo'@'localhost';
+Grant SELECT on fleurs.bouquet_std to 'bozo'@'localhost';
+Grant SELECT on fleurs.bouquet_perso to 'bozo'@'localhost';
+Grant SELECT on fleurs.composition to 'bozo'@'localhost';
 
 
