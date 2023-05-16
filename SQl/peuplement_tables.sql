@@ -16,32 +16,32 @@ INSERT INTO `fleurs`.`clients` (`id_client`,`nom_client`,`prenom_client`,`num_te
 VALUES
 ('C12', 'Durandnn', 'Jeannn', '06010203044', 'jean.durandoo@mail.com', '123456', '1 rue des Fleurs, Paris', '1234 5678 9012 3456', 0, 0, 'vide');
 
-INSERT INTO `fleurs`.`bouquet_perso` (`id_perso`,`description_bouquet`,`prix_max`)
+INSERT INTO `fleurs`.`bouquet_perso` (`id_perso`,`description_bouquet`,`prix_max`,`prix`)
 VALUES
-('Bouquet01', 'Bouquet de roses rouges et blanches', 50.0),
-('Bouquet02', 'Bouquet de pivoines et d''oeillets', 45.0),
-('Bouquet03', 'Bouquet de tournesols et de gerberas', 40.0),
-('Bouquet04', 'Bouquet de lys et de freesias', 55.0),
-('Bouquet05', 'Bouquet de roses roses et d''oeillets', 35.0),
-('Bouquet06', 'Bouquet de dahlias et de chrysanthèmes', 30.0),
-('Bouquet07', 'Bouquet de renoncules et de marguerites', 38.0),
-('Bouquet08', 'Bouquet de violettes et de campanules', 42.0),
-('Bouquet09', 'Bouquet de pivoines et de roses blanches', 48.0),
-('Bouquet10', 'Bouquet de lisianthus et de delphiniums', 52.0),
-('Bouquet11', 'Bouquet de roses oranges et de gerberas', 36.0),
-('Bouquet12', 'Bouquet de tulipes et de jonquilles', 33.0),
-('Bouquet13', 'Bouquet de pivoines et de freesias', 47.0),
-('Bouquet14', 'Bouquet de roses rouges et de lys', 58.0),
-('Bouquet15', 'Bouquet de renoncules et de freesias', 39.0),
-('Bouquet16', 'Bouquet de chrysanthèmes et de dahlias', 31.0),
-('Bouquet17', 'Bouquet de roses roses et de lys', 44.0),
-('Bouquet18', 'Bouquet de marguerites et de violettes', 41.0),
-('Bouquet19', 'Bouquet de tournesols et de lys', 54.0),
-('Bouquet20', 'Bouquet de pivoines et de roses rouges', 49.0),
-('Bouquet21','Cercle de fleur blanche, des tulipes',25),
-('Bouquet22','Croix de fleur jaune et blanche',30),
-('Bouquet23','mur de roses ou équivalent',45),
-('vide','vide',0);
+('Bouquet01', 'Bouquet de roses rouges et blanches', 50.0,14.98),
+('Bouquet02', 'Bouquet de pivoines et d''oeillets', 45.0,45),
+('Bouquet03', 'Bouquet de tournesols et de gerberas', 40.0,8.97),
+('Bouquet04', 'Bouquet de lys et de freesias', 55.0,17.98),
+('Bouquet05', 'Bouquet de roses roses et d''oeillets', 35.0,0.0),
+('Bouquet06', 'Bouquet de dahlias et de chrysanthèmes', 30.0,100),
+('Bouquet07', 'Bouquet de renoncules et de marguerites', 38.0,2.25),
+('Bouquet08', 'Bouquet de violettes et de campanules', 42.0,0.99),
+('Bouquet09', 'Bouquet de pivoines et de roses blanches', 48.0,0.0),
+('Bouquet10', 'Bouquet de lisianthus et de delphiniums', 52.0,0.0),
+('Bouquet11', 'Bouquet de roses oranges et de gerberas', 36.0,0.0),
+('Bouquet12', 'Bouquet de tulipes et de jonquilles', 33.0,0.0),
+('Bouquet13', 'Bouquet de pivoines et de freesias', 47.0,0.0),
+('Bouquet14', 'Bouquet de roses rouges et de lys', 58.0,0.0),
+('Bouquet15', 'Bouquet de renoncules et de freesias', 39.0,0.0),
+('Bouquet16', 'Bouquet de chrysanthèmes et de dahlias', 31.0,0.0),
+('Bouquet17', 'Bouquet de roses roses et de lys', 44.0,0.0),
+('Bouquet18', 'Bouquet de marguerites et de violettes', 41.0,0.0),
+('Bouquet19', 'Bouquet de tournesols et de lys', 54.0,0.0),
+('Bouquet20', 'Bouquet de pivoines et de roses rouges', 49.0,0.0),
+('Bouquet21','Cercle de fleur blanche, des tulipes',25,0.0),
+('Bouquet22','Croix de fleur jaune et blanche',30,0.0),
+('Bouquet23','mur de roses ou équivalent',45,0.0),
+('vide','vide',0,0);
 
 
 

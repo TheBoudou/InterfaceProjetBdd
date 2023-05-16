@@ -22,14 +22,15 @@ DROP TABLE IF EXISTS bouquet_perso;
 CREATE  TABLE IF NOT EXISTS bouquet_perso
 (id_perso VARCHAR(40) PRIMARY KEY,
 description_bouquet VARCHAR(40),
-prix_max FLOAT
+prix_max FLOAT(10),
+prix FLOAT(10)
 );
 
 DROP TABLE IF EXISTS bouquet_std;
 CREATE  TABLE IF NOT EXISTS bouquet_std
 (id_bouquet VARCHAR(40) PRIMARY KEY,
 categorie VARCHAR(40),
-prix FLOAT,
+prix FLOAT(10),
 nom_bouquet VARCHAR(40)
 );
 
@@ -42,10 +43,10 @@ adresse_livraison VARCHAR(40),
 message VARCHAR(40),
 date_livraison DATETIME,
 etat_commande VARCHAR(40),
-prix_commande INTEGER,
-id_client VARCHAR(40), FOREIGN KEY(id_client) REFERENCES clients(id_client),
-id_perso VARCHAR(40), FOREIGN KEY(id_perso) REFERENCES bouquet_perso(id_perso),
-id_bouquet VARCHAR(40), FOREIGN KEY(id_bouquet) REFERENCES bouquet_std(id_bouquet)
+prix_commande INTEGER(10),
+id_client VARCHAR(40), FOREIGN KEY(id_client) REFERENCES clients(id_client) on delete cascade,
+id_perso VARCHAR(40), FOREIGN KEY(id_perso) REFERENCES bouquet_perso(id_perso) on delete cascade,
+id_bouquet VARCHAR(40), FOREIGN KEY(id_bouquet) REFERENCES bouquet_std(id_bouquet)on delete cascade
 );
 
 
@@ -67,10 +68,10 @@ dispo_fleur BOOL
 DROP TABLE IF EXISTS composition;
 CREATE  TABLE IF NOT EXISTS composition
 (quantite FLOAT,
-id_accessoire VARCHAR(40), FOREIGN KEY(id_accessoire) REFERENCES accessoire(id_accessoire),
-id_fleur VARCHAR(40), FOREIGN KEY(id_fleur) REFERENCES fleur(id_fleur),
-id_perso VARCHAR(40), FOREIGN KEY(id_perso) REFERENCES bouquet_perso(id_perso),
-id_bouquet VARCHAR(40), FOREIGN KEY(id_bouquet) REFERENCES bouquet_std(id_bouquet),
+id_accessoire VARCHAR(40), FOREIGN KEY(id_accessoire) REFERENCES accessoire(id_accessoire) on delete cascade,
+id_fleur VARCHAR(40), FOREIGN KEY(id_fleur) REFERENCES fleur(id_fleur) on delete cascade,
+id_perso VARCHAR(40), FOREIGN KEY(id_perso) REFERENCES bouquet_perso(id_perso) on delete cascade,
+id_bouquet VARCHAR(40), FOREIGN KEY(id_bouquet) REFERENCES bouquet_std(id_bouquet) on delete cascade,
 PRIMARY KEY(id_accessoire,id_fleur,id_perso,id_bouquet)
 );
 
@@ -86,7 +87,7 @@ chiffre_affaires FLOAT
 DROP TABLE IF EXISTS stockfleur;
 CREATE  TABLE IF NOT EXISTS stockfleur
 (quantite FLOAT,
-id_fleur VARCHAR(40), FOREIGN KEY(id_fleur) REFERENCES fleur(id_fleur),
+id_fleur VARCHAR(40), FOREIGN KEY(id_fleur) REFERENCES fleur(id_fleur) on delete cascade,
 id_magasin VARCHAR(40), FOREIGN KEY(id_magasin) REFERENCES magasin(id_magasin),
 PRIMARY KEY(id_fleur,id_magasin)
 );
@@ -94,7 +95,7 @@ PRIMARY KEY(id_fleur,id_magasin)
 DROP TABLE IF EXISTS stockaccessoire;
 CREATE  TABLE IF NOT EXISTS stockaccessoire
 (quantite FLOAT,
-id_accessoire VARCHAR(40), FOREIGN KEY(id_accessoire) REFERENCES accessoire(id_accessoire),
+id_accessoire VARCHAR(40), FOREIGN KEY(id_accessoire) REFERENCES accessoire(id_accessoire) on delete cascade,
 id_magasin VARCHAR(40), FOREIGN KEY(id_magasin) REFERENCES magasin(id_magasin),
 PRIMARY KEY(id_accessoire,id_magasin)
 );
@@ -102,7 +103,7 @@ PRIMARY KEY(id_accessoire,id_magasin)
 
 DROP TABLE IF EXISTS achat_dans;
 CREATE  TABLE IF NOT EXISTS achat_dans
-(id_client VARCHAR(40), FOREIGN KEY(id_client) REFERENCES clients(id_client),
+(id_client VARCHAR(40), FOREIGN KEY(id_client) REFERENCES clients(id_client) on delete cascade,
 id_magasin VARCHAR(40), FOREIGN KEY(id_magasin) REFERENCES magasin(id_magasin),
 PRIMARY KEY(id_client,id_magasin)
 );
