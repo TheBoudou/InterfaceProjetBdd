@@ -23,11 +23,11 @@
         <TextBox x:Name="W_prenom" HorizontalAlignment="Left" Margin="222,77,0,0" TextWrapping="Wrap" Text="prénom" VerticalAlignment="Top" Width="148" TextChanged="prenom_TextChanged"/>
         <TextBox x:Name="W_numTel" HorizontalAlignment="Left" Margin="222,100,0,0" TextWrapping="Wrap" Text="numéro de téléphone" VerticalAlignment="Top" Width="148" TextChanged="numtel_TextChanged"/>
         <TextBox x:Name="W_email" HorizontalAlignment="Left" Margin="222,123,0,0" TextWrapping="Wrap" Text="email" VerticalAlignment="Top" Width="148" TextChanged="email_TextChanged"/>
-        <TextBox x:Name="W_adresse" HorizontalAlignment="Left" Margin="222,169,0,0" TextWrapping="Wrap" Text="adresse de facturation" VerticalAlignment="Top" Width="148" TextChanged="adresse_TextChanged"/>
-        <TextBox x:Name="W_carteCredit" HorizontalAlignment="Left" Margin="222,192,0,0" TextWrapping="Wrap" Text="carte de crédit" VerticalAlignment="Top" Width="148" TextChanged="carte_TextChanged"/>
-        <TextBox x:Name="W_nb_commandes" HorizontalAlignment="Left" Margin="222,215,0,0" TextWrapping="Wrap" Text="nb commandes total" VerticalAlignment="Top" Width="148" IsEnabled="False" TextChanged="W_nb_commandes_TextChanged" />
-        <TextBox x:Name="W_nb_commandes_mois" HorizontalAlignment="Left" Margin="222,238,0,0" TextWrapping="Wrap" Text="nb commandes du mois" VerticalAlignment="Top" Width="148" IsEnabled="False" TextChanged="W_nb_commandes_mois_TextChanged" />
-        <TextBox x:Name="W_statut" HorizontalAlignment="Left" Margin="222,261,0,0" TextWrapping="Wrap" Text="statut" VerticalAlignment="Top" Width="148" IsEnabled="False" TextChanged="W_statut_TextChanged" />
+        <TextBox x:Name="W_adresse" HorizontalAlignment="Left" Margin="222,169,0,0" TextWrapping="Wrap" Text="adresse de facturation" VerticalAlignment="Top" Width="148" TextChanged="adresse_TextChanged" Height="38"/>
+        <TextBox x:Name="W_carteCredit" HorizontalAlignment="Left" Margin="222,212,0,0" TextWrapping="Wrap" Text="carte de crédit" VerticalAlignment="Top" Width="148" TextChanged="carte_TextChanged"/>
+        <TextBox x:Name="W_nb_commandes" HorizontalAlignment="Left" Margin="222,235,0,0" TextWrapping="Wrap" Text="nb commandes total" VerticalAlignment="Top" Width="148" IsEnabled="False" TextChanged="W_nb_commandes_TextChanged" />
+        <TextBox x:Name="W_nb_commandes_mois" HorizontalAlignment="Left" Margin="222,258,0,0" TextWrapping="Wrap" Text="nb commandes du mois" VerticalAlignment="Top" Width="148" IsEnabled="False" TextChanged="W_nb_commandes_mois_TextChanged" />
+        <TextBox x:Name="W_statut" HorizontalAlignment="Left" Margin="222,281,0,0" TextWrapping="Wrap" Text="statut" VerticalAlignment="Top" Width="148" IsEnabled="False" TextChanged="W_statut_TextChanged" />
         <TextBlock Name="R_id" HorizontalAlignment="Left" Margin="28,31,0,0" TextWrapping="Wrap" Text="ID client" VerticalAlignment="Top" Height="18" Width="101"/>
         <TextBlock Name="R_nom" HorizontalAlignment="Left" Margin="28,54,0,0" TextWrapping="Wrap" Text="Nom" VerticalAlignment="Top" Height="18" Width="101"/>
         <TextBlock Name="R_prenom" HorizontalAlignment="Left" Margin="28,77,0,0" TextWrapping="Wrap" Text="Prénom" VerticalAlignment="Top" Height="18" Width="101"/>
@@ -35,12 +35,15 @@
         <TextBlock Name="R_email" HorizontalAlignment="Left" Margin="28,123,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Height="18" Width="101"/>
         <TextBlock Name="R_mdp" HorizontalAlignment="Left" Margin="28,146,0,0" TextWrapping="Wrap" Text="Mot de passe" VerticalAlignment="Top" Height="18" Width="101"/>
         <TextBlock Name="R_adresse" HorizontalAlignment="Left" Margin="28,169,0,0" TextWrapping="Wrap" Text="Adresse de facturation" VerticalAlignment="Top" Height="18" Width="143"/>
-        <TextBlock Name="R_carteCredit" HorizontalAlignment="Left" Margin="28,192,0,0" TextWrapping="Wrap" Text="Carte de crédit" VerticalAlignment="Top" Height="18" Width="101"/>
-        <TextBlock Name="R_nb_commandes" HorizontalAlignment="Left" Margin="28,215,0,0" TextWrapping="Wrap" Text="Nombre de commandes total" VerticalAlignment="Top" Height="19" Width="160"/>
-        <TextBlock Name="R_nb_commandes_mois" HorizontalAlignment="Left" Margin="28,238,0,0" TextWrapping="Wrap" Text="Nombre de commandes du mois" VerticalAlignment="Top" Height="25" Width="189"/>
-        <TextBlock Name="R_statut" HorizontalAlignment="Left" Margin="28,261,0,0" TextWrapping="Wrap" Text="Statut" VerticalAlignment="Top" Height="18" Width="101"/>
-        <Button Name="Sauvegarder" Content="Sauvegarder" HorizontalAlignment="Left" Margin="237,297,0,0" VerticalAlignment="Top" Width="118" Height="21" RenderTransformOrigin="0.7,0.421" Click="Sauvegarder_Click"/>
+        <TextBlock Name="R_carteCredit" HorizontalAlignment="Left" Margin="28,0,0,0" TextWrapping="Wrap" Text="Carte de crédit" VerticalAlignment="Center" Height="18" Width="101"/>
+        <TextBlock Name="R_nb_commandes" HorizontalAlignment="Left" Margin="28,235,0,0" TextWrapping="Wrap" Text="Nombre de commandes total" VerticalAlignment="Top" Height="19" Width="160"/>
+        <TextBlock Name="R_nb_commandes_mois" HorizontalAlignment="Left" Margin="28,258,0,0" TextWrapping="Wrap" Text="Nombre de commandes du mois" VerticalAlignment="Top" Height="25" Width="189"/>
+        <TextBlock Name="R_statut" HorizontalAlignment="Left" Margin="28,281,0,0" TextWrapping="Wrap" Text="Statut" VerticalAlignment="Top" Height="18" Width="101"/>
+        <Button Name="Sauvegarder" Content="Sauvegarder" HorizontalAlignment="Left" Margin="237,317,0,0" VerticalAlignment="Top" Width="118" Height="21" RenderTransformOrigin="0.7,0.421" Click="Sauvegarder_Click"/>
         <PasswordBox Name="W_mdp" HorizontalAlignment="Left" Margin="222,146,0,0" VerticalAlignment="Top" Width="148"/>
+        <TextBlock HorizontalAlignment="Left" Margin="222,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"><Run Language="fr-fr" Text="INFORMATIONS CLIENT"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="513,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="55" Width="220"><Run Language="fr-fr" Text="PASSER UNE COMMANDE /"/><LineBreak/><Run Language="fr-fr" Text="VOIR L'HISTORIQUE DES COMMANDES :"/></TextBlock>
+        <Button Name="Commandes" Content="Commandes" HorizontalAlignment="Left" Margin="565,77,0,0" VerticalAlignment="Top" Height="19" Width="111" Click="Commandes_Click"/>
 
     </Grid>
 </Window>

@@ -18,8 +18,13 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button x:Name="BouqueStdSucces" Content="Bouquet ayant le plus de succès" HorizontalAlignment="Left" Margin="80,83,0,0" VerticalAlignment="Top" Height="43" Width="188" Click="BouqueStdSucces_Click"/>
-        <TextBox x:Name="nom_client" HorizontalAlignment="Left" Margin="589,44,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="nom_client_TextChanged"/>
+        <Button x:Name="BouqueStdSucces" Content="Bouquet ayant le plus de succès" HorizontalAlignment="Left" Margin="32,47,0,0" VerticalAlignment="Top" Height="30" Width="326" Click="BouqueStdSucces_Click"/>
+        <TextBox x:Name="nom_client" HorizontalAlignment="Left" Margin="427,56,0,0" TextWrapping="Wrap" Text="Réponse" VerticalAlignment="Top" Width="326" IsEnabled="False" TextChanged="nom_client_TextChanged" Height="110"/>
+        <Button Name="ClientsMemeStd" Content="Clients qui ont commandé le même bouquet standard" HorizontalAlignment="Left" Margin="32,187,0,0" VerticalAlignment="Top" Height="30" Width="326" Click="ClientsMemeStd_Click"/>
+        <Button Name="FleurFail" Content="Fleurs classées de la + à la - vendue" HorizontalAlignment="Left" Margin="32,117,0,0" VerticalAlignment="Top" Height="30" Width="326" Click="Fleur_failure_Click"/>
+        <Button x:Name="FleurFail_Copy" Content="Accessoires classés du + au - vendu" HorizontalAlignment="Left" Margin="32,152,0,0" VerticalAlignment="Top" Height="30" Width="326" Click="Accessoire_failure_Click"/>
+        <DataGrid x:Name="AffichagePrincipal" HorizontalAlignment="Left" Height="206" Margin="0,228,0,0" VerticalAlignment="Top" Width="523" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button Name="CAEngendreSucces" Content="CA engendré par le bouquet ayant le plus de succès" HorizontalAlignment="Left" Margin="32,82,0,0" VerticalAlignment="Top" Height="30" Width="326" Click="CAEngendreSucces_Click"/>
 
     </Grid>
 </Window>

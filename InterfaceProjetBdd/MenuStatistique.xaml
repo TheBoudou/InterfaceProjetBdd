@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InterfaceProjetBdd"
         mc:Ignorable="d"
-        Title="MenuStatistique" Height="450" Width="200">
-   
+        Title="MenuStatistique" Height="450" Width="250">
+
     <Grid>
-        <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="28,212,0,0" VerticalAlignment="Top" Width="136" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5" Height="129">
+        <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="60,212,0,0" VerticalAlignment="Top" Width="136" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5" Height="129">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -18,12 +18,10 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="35,360,0,0" VerticalAlignment="Top" Width="130" Click="Retour_Click"/>
-        <Button Name="StatClient" Content="Statistiques Clients" HorizontalAlignment="Left" Margin="35,33,0,0" VerticalAlignment="Top" Height="31" Width="121" Click="StatClient_Click_1"/>
-        <Button Name="StatProduits" Content="Statistiques Produits" HorizontalAlignment="Left" Margin="35,73,0,0" VerticalAlignment="Top" Height="29" Width="121" Click="StatProduits_Click"/>
-        <Button Name="StatBouquets" Content="Statistiques Bouquets" HorizontalAlignment="Left" Margin="35,118,0,0" VerticalAlignment="Top" Height="20" Width="121" Click="StatBouquets_Click"/>
-        <Button Name="StatCommandes" Content="Statistiques Commandes" HorizontalAlignment="Left" Margin="35,152,0,0" VerticalAlignment="Top" Width="121" Click="StatCommandes_Click"/>
-        <Button Name="StatMagasins" Content="Statistiques Magasins" HorizontalAlignment="Left" Margin="35,177,0,0" VerticalAlignment="Top" Height="26" Width="121" Click="StatMagasins_Click"/>
+        <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Center" Margin="0,359,0,0" VerticalAlignment="Top" Width="130" Click="Retour_Click"/>
+        <Button Name="StatClient" Content="Statistiques Clients" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" Height="29" Width="202" Click="StatClient_Click_1"/>
+        <Button Name="StatBouquets" Content="Statistiques Produits / Commandes" HorizontalAlignment="Center" Margin="0,87,0,0" VerticalAlignment="Top" Height="29" Width="202" Click="StatBouquets_Click"/>
+        <Button Name="StatMagasins" Content="Statistiques Magasins" HorizontalAlignment="Center" VerticalAlignment="Top" Height="29" Width="202" Click="StatMagasins_Click" Margin="0,139,0,0"/>
 
     </Grid>
 </Window>

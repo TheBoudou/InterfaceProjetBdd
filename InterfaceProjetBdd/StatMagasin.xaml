@@ -18,8 +18,9 @@
             </Image.RenderTransform>
         </Image>
         <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="589,372,0,0" VerticalAlignment="Top" Width="130" Click="Retour_Click"/>
-        <Button x:Name="MasasinGrosCA" Content="Magasin ayant le plus gros CA" HorizontalAlignment="Left" Margin="87,117,0,0" VerticalAlignment="Top" Width="227" Click="MasasinGrosCA_Click"/>
-        <TextBox x:Name="nom_client" HorizontalAlignment="Left" Margin="572,44,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" IsEnabled="False" TextChanged="nom_client_TextChanged"/>
+        <Button x:Name="MasasinGrosCA" Content="Magasin ayant le plus gros CA" HorizontalAlignment="Left" Margin="38,61,0,0" VerticalAlignment="Top" Width="309" Click="MasasinGrosCA_Click" Height="49"/>
+        <DataGrid x:Name="AffichagePrincipal" HorizontalAlignment="Left" Height="206" Margin="0,228,0,0" VerticalAlignment="Top" Width="523" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button Name="CAinf" Content="Magasins ayant un CA inférieur à la moyenne des CA" HorizontalAlignment="Left" Margin="38,132,0,0" VerticalAlignment="Top" Height="44" Width="309" Click="CAinf_Click"/>
 
     </Grid>
 </Window>

@@ -75,7 +75,7 @@ namespace InterfaceProjetBdd
                             id = reader.GetValue(0).ToString();  // recuperation de la valeur de chaque cellule sous forme d'une string (voir cependant les differentes methodes disponibles !!)
                         }
                         reader.Close();
-                        if (id != "")
+                        if (id != "" && id==user)
                         {
                             MessageBox.Show("Connection réussie avec l'utilisateur : " + ID.Text, "Connection Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                             var Menu = new MenuPourClient(connectionstring,user);

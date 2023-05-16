@@ -84,8 +84,5 @@ namespace InterfaceProjetBdd
 
 
 
-
-        // Calcul du prix moyen du bouquet acheté 
-
     }
 }

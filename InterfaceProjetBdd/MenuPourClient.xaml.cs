@@ -84,6 +84,8 @@ namespace InterfaceProjetBdd
                 W_nb_commandes_mois.Text = Convert.ToString(this.nb_commandes_mois);
                 W_statut.Text = this.statut;
             }
+            reader.Close();
+            connection.Close();
         }
 
         private void Deconnexion_Click(object sender, RoutedEventArgs e)
@@ -196,9 +198,18 @@ namespace InterfaceProjetBdd
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = update;
             command.ExecuteReader();
+            MessageBox.Show("Modification réussie", "Modification Success", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+
             connection.Close();
 
             
+        }
+
+        private void Commandes_Click(object sender, RoutedEventArgs e)
+        {
+            var Commandes = new PourClientCommandes(connectionstring,this.id);
+            Commandes.Show();
+            this.Close();
         }
     }
 }

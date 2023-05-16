@@ -36,6 +36,29 @@ namespace InterfaceProjetBdd
             this.Close();
         }
 
+        public void FillGrid(string connectionstring, string commande)
+        {
+
+
+
+
+            MySqlConnection connection = new MySqlConnection(connectionstring);
+            connection.Open();
+            MySqlCommand cmdSel = new MySqlCommand(commande, connection);
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
+            try
+            {
+                da.Fill(dt);
+                AffichagePrincipal.ItemsSource = dt.DefaultView;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            connection.Close();
+        }
+
         private void MasasinGrosCA_Click(object sender, RoutedEventArgs e)
         {
            
@@ -58,9 +81,8 @@ namespace InterfaceProjetBdd
 
                 reader.Close();
 
-                string nomClient = "Le magasin ayant le plus grand CA est " + nom_magasin + " pour un CA de = " + CA;
-
-                nom_client.Text = nomClient;
+                FillGrid(connectionstring, command.CommandText);
+                
                 connection.Close();
 
 
@@ -69,33 +91,36 @@ namespace InterfaceProjetBdd
         }
 
 
-        public void FillGrid(string connectionstring, string commande)
-        {
-
-
-
-
-            MySqlConnection connection = new MySqlConnection(connectionstring);
-            connection.Open();
-            MySqlCommand cmdSel = new MySqlCommand(commande, connection);
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);
-            try
-            {
-                da.Fill(dt);
-              
-            }
-            catch (Exception ex)
-            {
-
-            }
-            connection.Close();
-        }
-
-
+        
         private void nom_client_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void CAinf_Click(object sender, RoutedEventArgs e)
+        {
+            MySqlConnection connection = new MySqlConnection(this.connectionstring);
+            connection.Open();
+
+            string nom_magasin;
+            int CA;
+
+            //requete synchronisee
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = " SELECT M.nom_magasin, M.chiffre_affaires FROM magasin M"
+            + " WHERE M.chiffre_affaires < (SELECT avg(M1.chiffre_affaires) FROM magasin M1);";
+
+            MySqlDataReader reader;
+            reader = command.ExecuteReader();
+            reader.Read();
+            nom_magasin = reader.GetString(0);
+            CA = reader.GetInt32(1);
+
+            reader.Close();
+
+            FillGrid(connectionstring, command.CommandText);
+
+            connection.Close();
         }
     }
 }
