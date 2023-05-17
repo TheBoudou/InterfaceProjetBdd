@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock x:Name="Titre_fenêtre" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="Menu de connection Fleuriste" VerticalAlignment="Top" FontFamily="Arial" FontSize="36"/>
+        <TextBlock x:Name="Titre_fenêtre" HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial" FontSize="36"><Run Text="Menu de conne"/><Run Language="fr-fr" Text="xion"/><Run Text=" Fleuriste"/></TextBlock>
         <Image x:Name="Image_Acceuil" HorizontalAlignment="Left" Margin="497,136,0,0" VerticalAlignment="Top" Width="217" Source="/modele-logo-fleur-verte_2242-8.png" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>
                 <TransformGroup>

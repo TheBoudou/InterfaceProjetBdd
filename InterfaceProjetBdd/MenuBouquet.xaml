@@ -29,7 +29,7 @@
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
         <TextBlock x:Name="TitreBouquetPerso" HorizontalAlignment="Left" Margin="28,244,0,0" TextWrapping="Wrap" Text="BouquetPerso" VerticalAlignment="Top" Height="16" Width="138" FontFamily="Arial"/>
-        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="146" HorizontalAlignment="Left" Margin="356,288,0,0" x:Name="dataGrid3" VerticalAlignment="Top" Width="175" SelectionChanged="dataGrid3_SelectionChanged" 
+        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="123" HorizontalAlignment="Left" Margin="356,288,0,0" x:Name="dataGrid3" VerticalAlignment="Top" Width="175" SelectionChanged="dataGrid3_SelectionChanged" 
             ScrollViewer.CanContentScroll="True" 
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
