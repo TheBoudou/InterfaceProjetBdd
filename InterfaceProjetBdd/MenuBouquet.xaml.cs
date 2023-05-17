@@ -257,6 +257,7 @@ namespace InterfaceProjetBdd
 
                                 MessageBox.Show("Ajout Réussie", "Add Success", MessageBoxButton.OK, MessageBoxImage.Information);
                                 FillGrid3(connectionstring);
+                                SelectComposant();
 
                             }
 

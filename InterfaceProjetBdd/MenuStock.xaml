@@ -18,7 +18,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Height="323" HorizontalAlignment="Left" Margin="0,111,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="144" SelectionChanged="dataGrid1_SelectionChanged" 
+        <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Height="313" HorizontalAlignment="Left" Margin="0,111,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="144" SelectionChanged="dataGrid1_SelectionChanged" 
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
@@ -29,7 +29,7 @@
             <ComboBoxItem>Fleur de Lys</ComboBoxItem>
             <ComboBoxItem>Jardin des Fleurs</ComboBoxItem>
         </ComboBox>
-        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="323" HorizontalAlignment="Left" Margin="180,111,0,0" x:Name="dataGrid2" VerticalAlignment="Top" Width="144" SelectionChanged="dataGrid2_SelectionChanged" 
+        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="313" HorizontalAlignment="Left" Margin="180,111,0,0" x:Name="dataGrid2" VerticalAlignment="Top" Width="144" SelectionChanged="dataGrid2_SelectionChanged" 
             ScrollViewer.CanContentScroll="True" 
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
@@ -38,7 +38,7 @@
         <Button Name="Modif" Content="Modifier Quantité" HorizontalAlignment="Left" Margin="356,152,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Modif_Click"/>
         <Button x:Name="Ajout" Content="Ajouter élément" HorizontalAlignment="Left" Margin="356,193,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Ajout_Click"/>
         <Button x:Name="Supprimer" Content="Supprimer élément" HorizontalAlignment="Left" Margin="356,234,0,0" VerticalAlignment="Top" Width="120" Height="20" Click="Supprimer_Click"/>
-        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="146" HorizontalAlignment="Left" Margin="356,288,0,0" x:Name="dataGrid3" VerticalAlignment="Top" Width="218" SelectionChanged="dataGrid3_SelectionChanged" 
+        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="136" HorizontalAlignment="Left" Margin="356,288,0,0" x:Name="dataGrid3" VerticalAlignment="Top" Width="218" SelectionChanged="dataGrid3_SelectionChanged" 
             ScrollViewer.CanContentScroll="True" 
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"/>

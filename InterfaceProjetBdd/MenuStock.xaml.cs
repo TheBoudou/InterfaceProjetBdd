@@ -155,7 +155,7 @@ namespace InterfaceProjetBdd
         {
             MySqlConnection connection = new MySqlConnection(connectionstring);
             connection.Open();
-            string commande = "Select nom_magasin,id_fleur,quantite from stockfleur,magasin where quantite < 10 and magasin.id_magasin=stockfleur.id_magasin" +" UNION "+ "Select nom_magasin,id_accessoire,quantite from stockaccessoire,magasin where quantite < 10 and magasin.id_magasin=stockaccessoire.id_magasin order by nom_magasin;";
+            string commande = "Select nom_magasin,id_fleur,quantite from stockfleur,magasin where quantite < 5 and magasin.id_magasin=stockfleur.id_magasin" +" UNION "+ "Select nom_magasin,id_accessoire,quantite from stockaccessoire,magasin where quantite < 5 and magasin.id_magasin=stockaccessoire.id_magasin order by nom_magasin;";
             MySqlCommand cmdSel = new MySqlCommand(commande, connection);
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmdSel);

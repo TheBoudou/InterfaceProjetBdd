@@ -49,7 +49,7 @@
         <Button x:Name="ModifButton" Content="Modifier Etat" HorizontalAlignment="Center" Margin="0,153,0,0" VerticalAlignment="Top" Width="120" Height="25" Click="ModifButton_Click" />
         <TextBox Name="Numcom" HorizontalAlignment="Center" Margin="0,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="Numcom_TextChanged"/>
         <ComboBox Name="Statut" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Statut_SelectionChanged">
-            <ComboBoxItem>CC</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">CC</ComboBoxItem>
             <ComboBoxItem>CAL</ComboBoxItem>
             <ComboBoxItem>CL</ComboBoxItem>
         </ComboBox>
