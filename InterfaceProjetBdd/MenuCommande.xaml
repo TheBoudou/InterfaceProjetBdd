@@ -29,6 +29,7 @@
             <ComboBoxItem>message</ComboBoxItem>
             <ComboBoxItem>date_livraison</ComboBoxItem>
             <ComboBoxItem>etat_commande</ComboBoxItem>
+            <ComboBoxItem>prix_commande</ComboBoxItem>
             <ComboBoxItem>id_client</ComboBoxItem>
             <ComboBoxItem>id_perso</ComboBoxItem>
             <ComboBoxItem>id_bouquet</ComboBoxItem>
@@ -37,6 +38,7 @@
             <ComboBoxItem >date_commande</ComboBoxItem>
             <ComboBoxItem>adresse_livraison</ComboBoxItem>
             <ComboBoxItem>message</ComboBoxItem>
+            <ComboBoxItem>prix_commande</ComboBoxItem>
             <ComboBoxItem>date_livraison</ComboBoxItem>
             <ComboBoxItem>etat_commande</ComboBoxItem>
             <ComboBoxItem>id_client</ComboBoxItem>

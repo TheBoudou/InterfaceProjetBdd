@@ -37,6 +37,9 @@ namespace InterfaceProjetBdd
             FillGrid2(connectionstring);
             this.type_bouquet = "perso";
             this.emptytypebouquet = "bouquet";
+            this.type = "fleur";
+            this.emptytype = "accessoire";
+            Objectchange();
 
         }
 
@@ -185,6 +188,38 @@ namespace InterfaceProjetBdd
 
         }
 
+        private void Objectchange()
+        {
+            MySqlConnection connection = new MySqlConnection(this.connectionstring);
+            connection.Open();
+
+            // Effacer les éléments existants de la combobox
+            Objet.Items.Clear();
+
+            // Créer une commande SQL pour récupérer les données à partir de la base de données
+            MySqlCommand command = new MySqlCommand("SELECT id_" + this.type + " FROM " + this.type + ";", connection);
+
+            // Exécuter la commande SQL et récupérer les données dans un DataReader
+            MySqlDataReader reader = command.ExecuteReader();
+
+            // Parcourir les enregistrements du DataReader et ajouter chaque élément à la combobox
+            while (reader.Read())
+            {
+                string name = "";
+                for (int i = 0; i < reader.FieldCount; i++)    // parcours cellule par cellule
+                {
+                    string valueAsString = reader.GetValue(i).ToString();  // recuperation de la valeur de chaque cellule sous forme d'une string (voir cependant les differentes methodes disponibles !!)
+                    name = valueAsString;
+                    Objet.Items.Add(name);
+                }
+            }
+
+            // Fermer la connexion et le DataReader
+            reader.Close();
+            connection.Close();
+        }
+
+
 
 
         private void Type_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -202,33 +237,8 @@ namespace InterfaceProjetBdd
                 {
                     this.emptytype = "fleur";
                 }
-                MySqlConnection connection = new MySqlConnection(this.connectionstring);
-                connection.Open();
 
-                // Effacer les éléments existants de la combobox
-                Objet.Items.Clear();
-
-                // Créer une commande SQL pour récupérer les données à partir de la base de données
-                MySqlCommand command = new MySqlCommand("SELECT id_" + this.type + " FROM " + this.type + ";", connection);
-
-                // Exécuter la commande SQL et récupérer les données dans un DataReader
-                MySqlDataReader reader = command.ExecuteReader();
-
-                // Parcourir les enregistrements du DataReader et ajouter chaque élément à la combobox
-                while (reader.Read())
-                {
-                    string name = "";
-                    for (int i = 0; i < reader.FieldCount; i++)    // parcours cellule par cellule
-                    {
-                        string valueAsString = reader.GetValue(i).ToString();  // recuperation de la valeur de chaque cellule sous forme d'une string (voir cependant les differentes methodes disponibles !!)
-                        name = valueAsString;
-                        Objet.Items.Add(name);
-                    }
-                }
-
-                // Fermer la connexion et le DataReader
-                reader.Close();
-                connection.Close();
+                Objectchange();
             }
         }
 
@@ -247,16 +257,65 @@ namespace InterfaceProjetBdd
                     {
                         try
                         {
+                            float newprix = 0;
                             MySqlConnection connection = new MySqlConnection(this.connectionstring);
                             connection.Open();
-                            string command = "INSERT INTO `fleurs`.`composition` (`id_" + this.type + "`,`quantite`,`id_" + this.emptytype + "`,`id_" + this.type_bouquet + "`,`id_" + this.emptytypebouquet + "`)Values('" + this.objet + "','" + num + "','vide','"+idbouquet.Text+"','vide');";
+                            string nomb = this.type_bouquet;
+                            if (this.type_bouquet == "bouquet")
+                            {
+                                nomb = "std";
+                            }
+                            try
+                            {
+                                
+                                MySqlCommand command1 = connection.CreateCommand();
+                                command1.CommandText = "select prix_" + this.type + ",b.prix from " + this.type + " a,bouquet_" + nomb + " b where id_" + this.type + "= '" + this.objet + "' and id_" + this.type_bouquet + " = '" + idbouquet.Text + "';"; // exemple de requete bien-sur !
+
+                                MySqlDataReader reader;
+                                reader = command1.ExecuteReader();
+
+                                float prixobjet = 0;
+                                float prixbouquet = 0;
+                                /* exemple de manipulation du resultat */
+                                while (reader.Read())                           // parcours ligne par ligne
+                                {
+
+                                    for (int i = 0; i < reader.FieldCount; i++)    // parcours cellule par cellule
+                                    {
+                                        string valueAsString = reader.GetValue(i).ToString();  // recuperation de la valeur de chaque cellule sous forme d'une string (voir cependant les differentes methodes disponibles !!)
+                                        prixobjet = float.Parse(reader.GetString(0));
+                                        prixbouquet = float.Parse(reader.GetString(1));
+
+                                    }
+
+                                }
+                                newprix = prixbouquet + (num * prixobjet);
+                                reader.Close();
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Erreur recup prix", "Add Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
+
+
+
+
+                            int finalprix = Convert.ToInt32(newprix);
+                            string command2 = "Update bouquet_" + nomb + " set prix='" + finalprix + "' where id_" + this.type_bouquet + "='" + idbouquet.Text + "';";
+                            MySqlCommand cmdSel2 = new MySqlCommand(command2, connection);
+                            int rowsAffected = cmdSel2.ExecuteNonQuery();
+                            connection.Close();
+                            connection.Open();
+                            string command = "INSERT INTO `fleurs`.`composition` (`id_" + this.type + "`,`quantite`,`id_" + this.emptytype + "`,`id_" + this.type_bouquet + "`,`id_" + this.emptytypebouquet + "`)Values('" + this.objet + "','" + num + "','vide','" + idbouquet.Text + "','vide');";
                             MySqlCommand cmdSel = new MySqlCommand(command, connection);
-                            int rowsAffected = cmdSel.ExecuteNonQuery();
-                            if (rowsAffected > 0)
+                            rowsAffected += cmdSel.ExecuteNonQuery();
+                            if (rowsAffected > 1)
                             {
 
                                 MessageBox.Show("Ajout Réussie", "Add Success", MessageBoxButton.OK, MessageBoxImage.Information);
                                 FillGrid3(connectionstring);
+                                FillGrid1(connectionstring);
+                                FillGrid2(connectionstring);
                                 SelectComposant();
 
                             }
@@ -303,13 +362,62 @@ namespace InterfaceProjetBdd
             {
                 MySqlConnection connection = new MySqlConnection(this.connectionstring);
                 connection.Open();
+                float newprix = 0;
+                string nomb = this.type_bouquet;
+                if (this.type_bouquet == "bouquet")
+                {
+                    nomb = "std";
+                }
+                try
+                {
+
+                    MySqlCommand command1 = connection.CreateCommand();
+                    command1.CommandText = "select prix_" + this.type + ",b.prix, quantite from " + this.type + " a,bouquet_" + nomb + " b,composition c where a.id_" + this.type + "= '" + this.objet + "' and b.id_" + this.type_bouquet + " = '" + idbouquet.Text + "' and c.id_"+this.type+"=a.id_"+this.type+" and c.id_"+this.type_bouquet+"=b.id_"+this.type_bouquet+";"; // exemple de requete bien-sur !
+
+                    MySqlDataReader reader;
+                    reader = command1.ExecuteReader();
+
+                    float prixobjet = 0;
+                    float prixbouquet = 0;
+                    int quantite = 0;
+                    /* exemple de manipulation du resultat */
+                    while (reader.Read())                           // parcours ligne par ligne
+                    {
+
+                        for (int i = 0; i < reader.FieldCount; i++)    // parcours cellule par cellule
+                        {
+                            string valueAsString = reader.GetValue(i).ToString();  // recuperation de la valeur de chaque cellule sous forme d'une string (voir cependant les differentes methodes disponibles !!)
+                            prixobjet = float.Parse(reader.GetString(0));
+                            prixbouquet = float.Parse(reader.GetString(1));
+                            quantite = Convert.ToInt32(reader.GetString(2));
+
+                        }
+
+                    }
+                    newprix = prixbouquet - (quantite * prixobjet);
+                    reader.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Erreur recup prix", "Add Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                int finalprix = Convert.ToInt32(newprix);
+                string command2 = "Update bouquet_" + nomb + " set prix='" + finalprix + "' where id_" + this.type_bouquet + "='" + idbouquet.Text + "';";
+                MySqlCommand cmdSel2 = new MySqlCommand(command2, connection);
+                int rowsAffected = cmdSel2.ExecuteNonQuery();
+                connection.Close();
+                connection.Open();
                 string command = "Delete from composition where id_" + this.type_bouquet + " = '" + idbouquet.Text + "'and id_fleur= '"+this.composant+"' or id_accessoire = '"+this.composant+"';";
                 MySqlCommand cmdSel = new MySqlCommand(command, connection);
-                int rowsAffected = cmdSel.ExecuteNonQuery();
-                if (rowsAffected > 0)
+                rowsAffected += cmdSel.ExecuteNonQuery();
+                if (rowsAffected > 1)
                 {
                     MessageBox.Show("Suppression Réussie", "Suppression Success", MessageBoxButton.OK, MessageBoxImage.Information);
                     FillGrid3(connectionstring);
+                    FillGrid1(connectionstring);
+                    FillGrid2(connectionstring);
+                    SelectComposant();
 
                 }
                 else
