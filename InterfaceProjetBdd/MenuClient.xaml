@@ -22,15 +22,15 @@
             </Image.RenderTransform>
         </Image>
         <Button x:Name="Retour" Grid.Column="1" Content="Retour" HorizontalAlignment="Left" Margin="339,337,0,0" VerticalAlignment="Top" Width="130" Click="Retour_Click"/>
-        <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Height="152" HorizontalAlignment="Left" Margin="0,282,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="501" Grid.ColumnSpan="2" SelectionChanged="dataGrid1_SelectionChanged" 
+        <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Height="152" HorizontalAlignment="Left" Margin="0,261,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="501" Grid.ColumnSpan="2" SelectionChanged="dataGrid1_SelectionChanged" 
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto">
         </DataGrid>
         <TextBlock x:Name="TitreMenu" Grid.Column="1" HorizontalAlignment="Left" Margin="128,29,0,0" TextWrapping="Wrap" Text="Menu Clients" VerticalAlignment="Top" Height="43" Width="151" FontFamily="Arial" FontSize="24"/>
-        <Button x:Name="BoutonSelect" Content="Select all" HorizontalAlignment="Left" Margin="42,100,0,0" VerticalAlignment="Top" Height="33" Width="110" FontFamily="Arial" Click="BoutonSelect_Click"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"><Run Language="fr-fr" Text="Commandes"/></TextBlock>
-        <ComboBox x:Name="Element1" Grid.Column="1" Margin="2,100,458,286" SelectionChanged="Element1_SelectionChanged" FontFamily="Arial">
+        <Button x:Name="BoutonSelect" Content="Select all" HorizontalAlignment="Left" Margin="42,79,0,0" VerticalAlignment="Top" Height="33" Width="110" FontFamily="Arial" Click="BoutonSelect_Click"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"><Run Language="fr-fr" Text="Commandes"/></TextBlock>
+        <ComboBox x:Name="Element1" Grid.Column="1" Margin="2,79,458,307" SelectionChanged="Element1_SelectionChanged" FontFamily="Arial">
             <ComboBoxItem IsSelected="True">*</ComboBoxItem>
             <ComboBoxItem >nom_client</ComboBoxItem>
             <ComboBoxItem >prenom_client</ComboBoxItem>
@@ -44,8 +44,8 @@
             <ComboBoxItem>statut</ComboBoxItem>
         </ComboBox>
         <TextBox Name="AffichageComboBox1" Grid.Column="1" HorizontalAlignment="Left" Margin="339,113,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="0" TextChanged="TextBox_TextChanged_2" IsEnabled="False" Height="23"/>
-        <Button x:Name="BoutonSelectWhere" Content="Select Where" HorizontalAlignment="Left" Margin="42,169,0,0" VerticalAlignment="Top" Height="33" Width="110" FontFamily="Arial" Click="BoutonSelectWhere_Click"/>
-        <ComboBox x:Name="Element2" Grid.Column="1" Margin="150,100,300,286" SelectionChanged="Element2_SelectionChanged" FontFamily="Arial">
+        <Button x:Name="BoutonSelectWhere" Content="Select Where" HorizontalAlignment="Left" Margin="42,148,0,0" VerticalAlignment="Top" Height="33" Width="110" FontFamily="Arial" Click="BoutonSelectWhere_Click"/>
+        <ComboBox x:Name="Element2" Grid.Column="1" Margin="150,79,300,307" SelectionChanged="Element2_SelectionChanged" FontFamily="Arial">
             <ComboBoxItem IsSelected="True"></ComboBoxItem>
             <ComboBoxItem >nom_client</ComboBoxItem>
             <ComboBoxItem >prenom_client</ComboBoxItem>
@@ -68,8 +68,8 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,79,0,0" TextWrapping="Wrap" Text="Eléments recherchés" VerticalAlignment="Top" Width="140"/>
-        <ComboBox x:Name="Element3where" Grid.Column="1" Margin="2,169,458,217" SelectionChanged="Element3_SelectionChanged" FontFamily="Arial">
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,58,0,0" TextWrapping="Wrap" Text="Eléments recherchés" VerticalAlignment="Top" Width="140"/>
+        <ComboBox x:Name="Element3where" Grid.Column="1" Margin="2,148,458,238" SelectionChanged="Element3_SelectionChanged" FontFamily="Arial">
             <ComboBoxItem IsSelected="True" Content="id_client" />
             <ComboBoxItem  Content="nom_client" />
             <ComboBoxItem Content="num_tel_client" />
@@ -82,9 +82,9 @@
             <ComboBoxItem Content="statut"/>
         </ComboBox>
         <TextBox x:Name="AffichageComboBox3" Grid.Column="1" HorizontalAlignment="Left" Margin="357,113,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="0" TextChanged="TextBox_TextChanged_4" Height="12" IsEnabled="False"/>
-        <TextBox Name="EntreeWhere" Grid.Column="1" HorizontalAlignment="Left" Margin="150,169,0,0" TextWrapping="Wrap" Text="Insérer Recherche" VerticalAlignment="Top" Width="148" TextChanged="EntreeWhere_TextChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="201,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2"><Run Language="fr-fr" Text="Eléments de comparaisons"/></TextBlock>
-        <Button x:Name="BoutonAddClient" Content="Ajout Client" HorizontalAlignment="Left" Margin="42,238,0,0" VerticalAlignment="Top" Height="33" Width="110" FontFamily="Arial" Click="BoutonAjout_Click"/>
-        <Button x:Name="BoutonSuppClient" Content="Suppression Client" HorizontalAlignment="Left" Margin="0,238,0,0" VerticalAlignment="Top" Height="33" Width="110" FontFamily="Arial" Click="BoutonSuppr_Click" Grid.Column="1"/>
+        <TextBox Name="EntreeWhere" Grid.Column="1" HorizontalAlignment="Left" Margin="150,148,0,0" TextWrapping="Wrap" Text="Insérer Recherche" VerticalAlignment="Top" Width="148" TextChanged="EntreeWhere_TextChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="201,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.ColumnSpan="2"><Run Language="fr-fr" Text="Eléments de comparaisons"/></TextBlock>
+        <Button x:Name="BoutonAddClient" Content="Ajout Client" HorizontalAlignment="Left" Margin="42,217,0,0" VerticalAlignment="Top" Height="33" Width="110" FontFamily="Arial" Click="BoutonAjout_Click"/>
+        <Button x:Name="BoutonSuppClient" Content="Suppression Client" HorizontalAlignment="Left" Margin="0,217,0,0" VerticalAlignment="Top" Height="33" Width="110" FontFamily="Arial" Click="BoutonSuppr_Click" Grid.Column="1"/>
     </Grid>
 </Window>

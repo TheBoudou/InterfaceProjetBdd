@@ -288,6 +288,9 @@ namespace InterfaceProjetBdd
             {
                 // Exception occurred, handle it here
                 MessageBox.Show("Une erreur est survenue : Veuillez réessayer.", "Erreur Critique", MessageBoxButton.OK, MessageBoxImage.Error);
+                var PourClientCommande = new PourClientCommandes(connectionstring, id);
+                PourClientCommande.Show();
+                this.Close();
             }
         }
     }

@@ -18,17 +18,17 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
-        <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Height="323" HorizontalAlignment="Left" Margin="0,111,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="144" SelectionChanged="dataGrid1_SelectionChanged" 
+        <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Height="141" HorizontalAlignment="Left" Margin="13,88,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="324" SelectionChanged="dataGrid1_SelectionChanged" 
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
         <TextBlock x:Name="Titre" HorizontalAlignment="Center" Margin="0,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontFamily="Arial"><Run Text="Gestion des "/><Run Language="fr-fr" Text="Bouquets"/></TextBlock>
-        <TextBlock x:Name="Bouquet_disponible" HorizontalAlignment="Left" Margin="32,90,0,0" TextWrapping="Wrap" Text="Bouquet Standard" VerticalAlignment="Top" Height="16" Width="104" FontFamily="Arial"/>
-        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="323" HorizontalAlignment="Left" Margin="180,111,0,0" x:Name="dataGrid2" VerticalAlignment="Top" Width="144" SelectionChanged="dataGrid2_SelectionChanged" 
+        <TextBlock x:Name="Bouquet_disponible" HorizontalAlignment="Left" Margin="45,67,0,0" TextWrapping="Wrap" Text="Bouquet Standard" VerticalAlignment="Top" Height="16" Width="104" FontFamily="Arial"/>
+        <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="146" HorizontalAlignment="Left" Margin="13,265,0,0" x:Name="dataGrid2" VerticalAlignment="Top" Width="324" SelectionChanged="dataGrid2_SelectionChanged" 
             ScrollViewer.CanContentScroll="True" 
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
-        <TextBlock x:Name="TitreBouquetPerso" HorizontalAlignment="Left" Margin="183,90,0,0" TextWrapping="Wrap" Text="BouquetPerso" VerticalAlignment="Top" Height="16" Width="138" FontFamily="Arial"/>
+        <TextBlock x:Name="TitreBouquetPerso" HorizontalAlignment="Left" Margin="28,244,0,0" TextWrapping="Wrap" Text="BouquetPerso" VerticalAlignment="Top" Height="16" Width="138" FontFamily="Arial"/>
         <DataGrid ItemsSource="{Binding ''}" AutoGenerateColumns="True" Height="146" HorizontalAlignment="Left" Margin="356,288,0,0" x:Name="dataGrid3" VerticalAlignment="Top" Width="175" SelectionChanged="dataGrid3_SelectionChanged" 
             ScrollViewer.CanContentScroll="True" 
             ScrollViewer.VerticalScrollBarVisibility="Auto"

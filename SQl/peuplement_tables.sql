@@ -1,3 +1,4 @@
+#final
 INSERT INTO `fleurs`.`clients` (`id_client`,`nom_client`,`prenom_client`,`num_tel_client`,`email_client`,`mdp_client`,`adresse_facturation_client`,`carte_credit_client`,`nb_commandes`,`nb_commandes_mois`,`Statut`)
 VALUES
 ('C1', 'Durand', 'Jean', '0601020304', 'jean.durand@mail.com', '123456', '1 rue des Fleurs, Paris', '1234 5678 9012 3456', 5, 2, 'vide'),
@@ -19,11 +20,11 @@ VALUES
 INSERT INTO `fleurs`.`bouquet_perso` (`id_perso`,`description_bouquet`,`prix_max`,`prix`)
 VALUES
 ('Bouquet01', 'Bouquet de roses rouges et blanches', 50.0,14.98),
-('Bouquet02', 'Bouquet de pivoines et d''oeillets', 45.0,45),
+('Bouquet02', 'Bouquet de pivoines et d''oeillets', 45.0,45.0),
 ('Bouquet03', 'Bouquet de tournesols et de gerberas', 40.0,8.97),
 ('Bouquet04', 'Bouquet de lys et de freesias', 55.0,17.98),
 ('Bouquet05', 'Bouquet de roses roses et d''oeillets', 35.0,0.0),
-('Bouquet06', 'Bouquet de dahlias et de chrysanthèmes', 30.0,100),
+('Bouquet06', 'Bouquet de dahlias et de chrysanthèmes', 30.0,100.0),
 ('Bouquet07', 'Bouquet de renoncules et de marguerites', 38.0,2.25),
 ('Bouquet08', 'Bouquet de violettes et de campanules', 42.0,0.99),
 ('Bouquet09', 'Bouquet de pivoines et de roses blanches', 48.0,0.0),
@@ -38,19 +39,19 @@ VALUES
 ('Bouquet18', 'Bouquet de marguerites et de violettes', 41.0,0.0),
 ('Bouquet19', 'Bouquet de tournesols et de lys', 54.0,0.0),
 ('Bouquet20', 'Bouquet de pivoines et de roses rouges', 49.0,0.0),
-('Bouquet21','Cercle de fleur blanche, des tulipes',25,0.0),
-('Bouquet22','Croix de fleur jaune et blanche',30,0.0),
-('Bouquet23','mur de roses ou équivalent',45,0.0),
-('vide','vide',0,0);
+('Bouquet21','Cercle de fleur blanche, des tulipes',25.0,0.0),
+('Bouquet22','Croix de fleur jaune et blanche',30.0,0.0),
+('Bouquet23','mur de roses ou équivalent',45.0,0.0),
+('vide','vide',0.0,0.0);
 
 
 
 INSERT INTO `fleurs`.`bouquet_std` (`id_bouquet`,`categorie`,`prix`,`nom_bouquet`)
 VALUES
-("std1", "St-Valentin", 25.00, "Bouquet de roses rouges"),
-("std2", "Enterrement", 30.00, "Bouquet de tulipes multicolores"),
-("std3", "Mariage", 40.00, "Bouquet de lys blancs"),
-("std4", "Fête des mères", 35.00, "Bouquet de pivoines roses"),
+("std1", "St-Valentin", 3.75, "Bouquet de roses rouges"),
+("std2", "Enterrement", 29.97, "Bouquet de tulipes multicolores"),
+("std3", "Mariage", 12.5, "Bouquet de lys blancs"),
+("std4", "Fête des mères", 0.00, "Bouquet de pivoines roses"),
 ("std5", "Fête des pères", 50.00, "Bouquet d'orchidées blanches"),
 ("std6", "Toute occasion", 20.00, "Bouquet de marguerites jaunes"),
 ("std7", "Mariage", 35.00, "Bouquet de lilas mauves"),
@@ -58,26 +59,26 @@ VALUES
 ("std9", "Anniversaire", 30.00, "Bouquet de chrysanthèmes roses"),
 ("std10", "Enterrement", 40.00, "Bouquet de dahlias rouges"),
 ("std11", "Fête des mères", 35.00, "Bouquet d'hortensias bleus"),
-('std12','Toute occasion',45,'Gros Merci'),
-('vide','vide',0,'vide');
+('std12','Toute occasion',45.0,'Gros Merci'),
+('vide','vide',0.0,'vide');
 
 
 INSERT INTO `fleurs`.`commande` (`num_commande`,`date_commande`,`adresse_livraison`,`message`,`date_livraison`,`etat_commande`,`id_client`,`id_perso`,`id_bouquet`,`prix_commande`)
 VALUES
-('1', '2023-04-28', '12 Rue de la Paix, Paris', 'Joyeux Anniversaire', '2023-05-30', 'VINV', 'C1', 'vide', 'std1',20),
-('2', '2023-04-29', '45 Rue de la Roquette, Lyon', 'Félicitations', '2023-05-20', 'CC', 'C2', 'vide', 'std10',24),
-('3', '2023-04-29', '5 Avenue des Champs-Élysées, Paris', 'Bonne Fête', '2023-05-15', 'CPAV', 'C3', 'Bouquet09', 'vide',35),
-('4', '2023-04-29', '28 Rue Sainte-Catherine, Bordeaux', 'vide', '2023-05-17', 'CAL', 'C4', 'Bouquet10', 'vide',45),
-('5', '2023-04-30', '9 Rue de la République, Marseille', 'Joyeuses Pâques', '2023-05-04', 'CL', 'C5', 'vide', 'std1',32),
-('6', '2023-04-30', '1 Place de la Comédie, Montpellier', 'vide', '2023-05-24', 'CAL', 'C6', 'Bouquet06', 'vide',62),
-('7', '2023-05-01', '16 Rue des Archives, Paris', 'Bonne Fête des Mères', '2023-05-26', 'CPAV', 'C7', 'Bouquet04','vide',42),
-('8', '2023-05-01', '78 Rue de la Pompe, Neuilly-sur-Seine', 'Joyeux Anniversaire', '2023-05-27', 'CC', 'C8', 'vide', 'std4',34),
-('9', '2023-05-01', '2 Rue de la République, Lyon', 'vide', '2023-05-30', 'VINV', 'C9', 'vide', 'std3',14),
-('10', '2023-05-02', '50 Rue de la République, Lille', 'Bonne Fête des Pères', '2023-05-03', 'CL', 'C9', 'vide', 'std1',35),
-('11', '2023-05-02', '10 Rue de la Convention, Marseille', 'vide', '2023-05-24', 'CAL', 'C11', 'vide', 'std5',24),
-('12','2002-01-15','15 avenue de serre, Paris','Vite svp','2002-01-20','CL','C10','Bouquet01','vide',26),
-('13','2020-01-15','15 avenue de serre, Paris','Allez','2020-01-20','CL','C10','Bouquet02','vide',25),
-('14','2021-01-20','15 avenue de serre, Paris','Yes','2021-01-25','CL','C10','Bouquet03','vide',14);
+('1', '2023-04-28', '12 Rue de la Paix, Paris', 'Joyeux Anniversaire', '2023-05-30', 'CAL', 'C1', 'vide', 'std1',3.75),
+('2', '2023-04-29', '45 Rue de la Roquette, Lyon', 'Félicitations', '2023-05-20', 'CC', 'C2', 'vide', 'std10',40.0),
+('3', '2023-04-29', '5 Avenue des Champs-Élysées, Paris', 'Bonne Fête', '2023-05-15', 'CL', 'C3', 'Bouquet09', 'vide',11.0),
+('4', '2023-04-29', '28 Rue Sainte-Catherine, Bordeaux', 'vide', '2023-05-17', 'CAL', 'C4', 'Bouquet10', 'vide',0.0),
+('5', '2023-04-30', '9 Rue de la République, Marseille', 'Joyeuses Pâques', '2023-05-04', 'CL', 'C5', 'vide', 'std1',3.75),
+('6', '2023-04-30', '1 Place de la Comédie, Montpellier', 'vide', '2023-05-24', 'CAL', 'C6', 'Bouquet06', 'vide',100.0),
+('7', '2023-05-01', '16 Rue des Archives, Paris', 'Bonne Fête des Mères', '2023-05-26', 'CAL', 'C7', 'Bouquet04','vide',17.98),
+('8', '2023-05-01', '78 Rue de la Pompe, Neuilly-sur-Seine', 'Joyeux Anniversaire', '2023-05-27', 'CC', 'C8', 'vide', 'std4',0.0),
+('9', '2023-05-01', '2 Rue de la République, Lyon', 'vide', '2023-05-30', 'CC', 'C9', 'vide', 'std3',12.5),
+('10', '2023-05-02', '50 Rue de la République, Lille', 'Bonne Fête des Pères', '2023-05-03', 'CL', 'C9', 'vide', 'std1',3.75),
+('11', '2023-05-02', '10 Rue de la Convention, Marseille', 'vide', '2023-05-24', 'CAL', 'C11', 'vide', 'std5',50.0),
+('12','2002-01-15','15 avenue de serre, Paris','Vite svp','2002-01-20','CL','C10','Bouquet01','vide',14.98),
+('13','2020-01-15','15 avenue de serre, Paris','Allez','2020-01-20','CL','C10','Bouquet02','vide',45.0),
+('14','2021-01-20','15 avenue de serre, Paris','Yes','2021-01-25','CL','C10','Bouquet03','vide',8.97);
 
 
 
@@ -95,8 +96,8 @@ VALUES
     ('Attrape rêve', 7.50, True),
     ('Composition chien', 18.75, False),
     ('Récipient zinc', 14.99, True),
-    ('Pot',10,True),
-    ('vide',0,False);
+    ('Pot',10.0,True),
+    ('vide',0.0,False);
 
     
     
@@ -115,9 +116,9 @@ VALUES ('rose', 1.99, true),
        ('tournesol', 2.99, true),
        ('oeillet', 3.50, true),
        ('jonquille', 4.50, true),
-       ('lavande',3,True),
-       ('muguet',2,False),
-       ('vide',0,False);
+       ('lavande',3.0,True),
+       ('muguet',2.0,False),
+       ('vide',0.0,False);
    
 
        

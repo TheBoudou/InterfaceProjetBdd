@@ -18,7 +18,7 @@
             </Image.RenderTransform>
         </Image>
         <Button x:Name="Retour" Content="Retour" HorizontalAlignment="Left" Margin="589,372,0,0" VerticalAlignment="Top" Width="130" Click="Retour_Click"/>
-        <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Height="424" HorizontalAlignment="Left" Margin="10,10,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="264" SelectionChanged="dataGrid1_SelectionChanged" 
+        <DataGrid ItemsSource="{Binding }" AutoGenerateColumns="True" Height="372" HorizontalAlignment="Left" Margin="10,10,0,0" Name="dataGrid1" VerticalAlignment="Top" Width="264" SelectionChanged="dataGrid1_SelectionChanged" 
                   ScrollViewer.CanContentScroll="True" 
                   ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
